@@ -1,5 +1,7 @@
 <script lang="ts">
         import { onMount } from 'svelte';
+        import DropDownMenu from './DropDownMenu.svelte';
+        import MainPage from './MainPage.svelte';
 
         // Getting the current date and time
 
@@ -131,9 +133,9 @@
         <div class="sun-glow"></div>
 {/if}
 
-<div class=" background app-container {backgroundClass}">
+<div class="background app-container {backgroundClass}">
         <div class="date-time">
-                {timeDescripton} ({currentDateTime.toLocaleTimeString()})
+                <MainPage></MainPage>
         </div>
 </div>
 

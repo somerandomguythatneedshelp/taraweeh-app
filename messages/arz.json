@@ -1,4 +1,10 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from arz!"
+	"settings": {
+		"settings": "Settings",
+		"select_language": "اِخْتَرْ لُغَةً مَنِ الْقَائِمَةَ أَدْنَاَهُ"
+	},
+	"mosques": {
+		"mosque": "مَسْجِدٌ"
+	}
 }

@@ -1,4 +1,10 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from ur!"
+	"settings": {
+		"settings": "ترتیبات",
+		"select_language": "مندرجہ ذیل مینو سے ایک زبان منتخب کریں۔"
+	},
+	"mosques": {
+		"mosque": "مسجد"
+	}
 }
