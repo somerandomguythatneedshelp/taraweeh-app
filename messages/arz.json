@@ -1,7 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"settings": {
-		"settings": "Settings",
+		"settings": "الْإِعْدَادَاتُ",
 		"select_language": "اِخْتَرْ لُغَةً مَنِ الْقَائِمَةَ أَدْنَاَهُ"
 	},
 	"mosques": {

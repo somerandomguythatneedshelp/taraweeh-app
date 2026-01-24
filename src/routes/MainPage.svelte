@@ -9,7 +9,23 @@
 <!-- Acutal page content -->
 {#if active == "mosque"}
     <div>
-        Thumb
+        <div class="mosque-list bg-black/30"> <!-- a list containing all of the mosques/masjids -->
+            <button class="mosque bg-black/50" id="brough-mosque">
+                <span class="mosque-title">East Riding Community Foundation Centre</span>
+                <br>
+                <span class="mosque-address">Welton craft, 6 Common Ln, Welton, Brough HU15 1PT</span>
+            </button>
+            <button class="mosque bg-black/50" id="as-suffa">
+                <span class="mosque-title">As Suffa Education</span>
+                <br>
+                <span class="mosque-address">As Suffa Education, Walker St, Hull HU3 2HD</span>
+            </button>
+            <button class="mosque bg-black/50" id="hull-mosque">
+                <span class="mosque-title">Hull Mosque & Islamic Centre</span>
+                <br>
+                <span class="mosque-address">2 Berkeley St, Hull HU3 1PR</span>
+            </button>
+        </div>
     </div>
 
 {:else}
@@ -20,17 +36,24 @@
     <!-- Bottom Nav Bar -->
 <div class="bottom-nav bg-white/20"> 
     <button class="nav-item {active === 'mosque' ? 'active' : ''}" on:click={() => active = 'mosque'}>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2L2 9h3v9h14V9h3L12 2zM7 18v-5h10v5H7z"/>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M2 20h20" />
+  <path d="M12 11V7" />
+  <path d="M12 7a5 5 0 0 0-5 5v8h10v-8a5 5 0 0 0-5-5Z" />
+  <path d="M17 20v-7a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v7" />
+  <path d="M7 20v-7a2 2 0 0 0-2-2h0a2 2 0 0 0-2 2v7" />
+  <path d="M12 4v1" />
+  <path d="M11 2.5a1.5 1.5 0 1 1 2 0" />
+</svg>
         <span>{m["mosques.mosque"]()}</span>
         <span class="indicator"></span>
     </button>
 
     <button class="nav-item {active === 'settings' ? 'active' : ''}" on:click={() => active = 'settings'}>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 4a6.97 6.97 0 01-.11 1l2.07 1.61-2 3.46-2.45-1a6.92 6.92 0 01-1 .58l-.38 2.6h-4l-.38-2.6a6.92 6.92 0 01-1-.58l-2.45 1-2-3.46 2.07-1.61a6.97 6.97 0 01-.11-1 6.97 6.97 0 01.11-1L2.07 9.39l2-3.46 2.45 1a6.92 6.92 0 011-.58L8.9 3h4l.38 2.6a6.92 6.92 0 011 .58l2.45-1 2 3.46-2.07 1.61c.07.33.11.66.11 1z"/>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="3" />
+  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+</svg>
         <span>{m["settings.settings"]()}</span>
         <span class="indicator"></span>
     </button>
@@ -111,4 +134,45 @@
     .nav-item:focus {
         outline: none;
     }
+
+    .mosque-list {
+        position: fixed;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 400px;
+        height: 75vh;
+        border-radius: 35px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        z-index: 100;
+        margin: 0 auto;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;   /* stack mosque items vertically */
+        gap: 12px;                /* spacing between items */
+        overflow: auto;           /* scroll if contents exceed 75vh */
+    }
+
+.mosque {
+  position: static;         /* regular flow inside .mosque-list */
+  width: 100%;
+  max-width: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  padding: 10px;
+}
+
+.mosque-title {
+    font-size: large;
+    font-style: bold;
+}
+
+.mosque-address {
+    font-size: small;
+    font-weight: 500;
+    font-style: italic;
+    color: gray;
+}
+
 </style>
