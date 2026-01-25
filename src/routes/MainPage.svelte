@@ -144,10 +144,10 @@
         position: fixed;
         border-radius: 14px;
         padding: 16px;
-        top: 16px;
+        top: 5vh;
         width: 90vw;
         transform: translateX(-50%);
-        height: 85vh;
+        height: 75vh;
         box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         z-index: 100;
         margin: 0 auto;

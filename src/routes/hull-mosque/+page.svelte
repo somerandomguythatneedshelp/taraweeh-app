@@ -17,7 +17,7 @@
 <style>
 .settings-card {
     position: absolute;
-    top: 16px;
+    top: 5vh;
     left: 16px;
     right: 16px;
 

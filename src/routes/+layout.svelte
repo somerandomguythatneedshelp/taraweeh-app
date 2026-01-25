@@ -1,8 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { locales, localizeHref } from '$lib/paraglide/runtime';
+	import { locales, localizeHref, getLocale } from '$lib/paraglide/runtime';
 	import './layout.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/favicon.ico';
+        import favicon57x57 from '$lib/assets/favicon57x57.png';
+        import favicon72x72 from '$lib/assets/favicon72x72.png';
+        import favicon92x92 from '$lib/assets/favicon92x92.png';
+        import favicon114x114 from '$lib/assets/favicon114x114.png';
+        import favicon144x144 from '$lib/assets/favicon144x144.png';
 	import { getTimeDescription } from '$lib/backgroundHelper';
 
 	let { children } = $props();
@@ -25,17 +30,56 @@
 	);
 
 	const backgroundClass = $derived(timeDescription);
+
+        let fontStyle =  $state(getLocale() == "ar" || getLocale() == "arz" || getLocale() == "ur" ? "amiri-regular" : "")
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Nastaliq+Urdu:wght@400..700&display=swap" rel="stylesheet">
+
+        <!--apple pwa shit-->
+        <!--
+        Source - https://stackoverflow.com/a
+        Posted by Dinesh Vaghasia
+        Retrieved 2026-01-25, License - CC BY-SA 3.0
+        -->
+
+        <meta name="full-screen" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-title" content="Taraweeh+">
+        <meta name="apple-mobile-web-app-status-bar-style" content="automatic">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
+        <link rel="manifest" href="/manifest.json">
+
+
+        <!--
+        Source - https://stackoverflow.com/a
+        Posted by Dinesh Vaghasia
+        Retrieved 2026-01-25, License - CC BY-SA 3.0
+        -->
+
+        <link rel="apple-touch-icon" sizes="57x57" href={favicon57x57} />
+        <link rel="apple-touch-icon" sizes="72x72" href={favicon72x72} />
+        <link rel="apple-touch-icon" sizes="114x114" href={favicon114x114} />
+        <link rel="apple-touch-icon" sizes="144x144" href={favicon144x144} />
+        <link rel="apple-touch-icon" href={favicon92x92} />
+
+
 </svelte:head>
 
 {#if timeDescription === 'sunlight'}
 	<div class="sun-glow"></div>
 {/if}
 
-<div class="background app-container {backgroundClass}">
+<div class="background app-container {fontStyle} {backgroundClass}">
 	{@render children()}
 </div>
 
@@ -48,18 +92,55 @@
 </div>
 
 <style>
+.noto-nastaliq-urdu-font {
+  font-family: "Noto Nastaliq Urdu", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.amiri-regular {
+  font-family: "Amiri", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.amiri-bold {
+  font-family: "Amiri", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.amiri-regular-italic {
+  font-family: "Amiri", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.amiri-bold-italic {
+  font-family: "Amiri", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
         .date-time {
                 font-weight: 500;
         }
 
         .background {
-                width: 100vw; /* full width */
-                height: 100vh; /* full height */
+                width: 100%;
+                height: 100vh;
                 display: flex; /* center content */
                 align-items: center;
                 justify-content: center;
                 transition: background 0.5s ease; /* smooth background changes */
                 color: white; /* text color */
+                  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+    margin: 0;
+  padding: 0;
         }
 
         .sunlight {
@@ -242,7 +323,6 @@
                 position: relative;
                 z-index: 1;
                 padding: 40px 20px;
-                max-width: 400px;
                 margin: 0 auto;
                 text-align: center;
         }
