@@ -6,5 +6,17 @@
 	},
 	"mosques": {
 		"mosque": "Moské"
+	},
+	"ercf": {
+		"desc1": "\"East Riding Community Foundation Trust\" har lett olika initiativ för sammanhållning mellan olika grupper",
+		"desc2": "program och aktiviteter som har lett till olika sociala evenemang, utbildningsseminarier, ",
+		"desc3": "Ramadan-öppet hus, religiösa tjänster och begravningstjänster etc. ",
+		"desc4": "Under Covid-19-pandemin ställde vi också upp som volontärer för att dela ut mat och medicinska förnödenheter."
+	},
+	"as-suffa": {
+		"desc": "\"AS-SUFFA EDUCATION\" drivs av intresset och engagemanget hos vår fantastiska gemenskap av passionerade experter och livslånga lärande. Vi är en växande gemenskapsbaserad grupp som fokuserar på att förbättra vårt utbud av aktiviteter och projekt för att tillgodose gemenskapens växande behov. Vi är stolta över att vara en fantastisk resurs och erbjuda användarna möjlighet att engagera sig i en mängd olika ämnen i en intressant och säker miljö."
+	},
+	"hull-mosque": {
+		"desc": "\"Hull Mosque & Islamic Centre\"  är en gren av UK Islamic Mission och grundades i Hull 1984.  Sedan dess har den fungerat som den viktigaste samlingspunkten för den muslimska gemenskapen i Hull.  Hull Mosque är en källa till stöd och vägledning för hela gemenskapen och har genom åren varit den första kontaktpunkten för många nyanlända till staden, från migranter till flyktingar."
 	}
 }

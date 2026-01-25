@@ -7,13 +7,10 @@
 </script>
 
 <div class="settings-card bg-black/50">
-    <span class="font-bold text-lg">East Riding Community Foundation Centre</span>
+    <span class="font-bold text-lg">As Suffa Education</span>
     <br> <!--BRRR-->
     <br> <!--im crine 😭-->
-    <span>{m["ercf.desc1"]()}</span><br>
-    <span>{m["ercf.desc2"]()}</span><br>
-    <span>{m["ercf.desc3"]()}</span><br>
-    <span>{m["ercf.desc4"]()}</span><br>
+    <span>{m["as-suffa.desc"]()}</span><br>
 
 </div>
 

@@ -9,11 +9,12 @@
         arz: "الْعَرَبِيَّةُ",
         sv: "svensk",
         hi: "नहीं",
+        "ar-zi": "Franco (Arabizi)",
     };
 
     function handleChange(event: Event) {
         const target = event.target as HTMLSelectElement;
-        setLocale(target.value);
+        setLocale(target.value, {reload: true});
     }
 </script>
 

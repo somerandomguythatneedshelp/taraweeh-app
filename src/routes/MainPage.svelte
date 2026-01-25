@@ -1,6 +1,5 @@
 <script lang="ts">
 	import DropDownMenu from "./DropDownMenu.svelte";
-    import { getLocale, setLocale, locales } from "$lib/paraglide/runtime.js"; 
     import * as m from "$lib/paraglide/messages.js";
 
     let active = 'mosque';
@@ -10,21 +9,27 @@
 {#if active == "mosque"}
     <div>
         <div class="mosque-list bg-black/30"> <!-- a list containing all of the mosques/masjids -->
-            <button class="mosque bg-black/50" id="brough-mosque">
-                <span class="mosque-title">East Riding Community Foundation Centre</span>
-                <br>
-                <span class="mosque-address">Welton craft, 6 Common Ln, Welton, Brough HU15 1PT</span>
-            </button>
-            <button class="mosque bg-black/50" id="as-suffa">
-                <span class="mosque-title">As Suffa Education</span>
-                <br>
-                <span class="mosque-address">As Suffa Education, Walker St, Hull HU3 2HD</span>
-            </button>
-            <button class="mosque bg-black/50" id="hull-mosque">
+            <a href="/ercf">
+                <button class="mosque bg-black/50" id="brough-mosque">
+                    <span class="mosque-title">East Riding Community Foundation Centre</span>
+                    <br>
+                    <span class="mosque-address">Welton craft, 6 Common Ln, Welton, Brough HU15 1PT</span>
+                </button>
+            </a>
+            <a href="/as-suffa">
+                <button class="mosque bg-black/50" id="as-suffa">
+                    <span class="mosque-title">As Suffa Education</span>
+                    <br>
+                    <span class="mosque-address">As Suffa Education, Walker St, Hull HU3 2HD</span>
+                </button>
+            </a>
+            <a href="/hull-mosque">
+                <button class="mosque bg-black/50" id="hull-mosque">
                 <span class="mosque-title">Hull Mosque & Islamic Centre</span>
                 <br>
                 <span class="mosque-address">2 Berkeley St, Hull HU3 1PR</span>
             </button>
+            </a>
         </div>
     </div>
 
@@ -137,17 +142,15 @@
 
     .mosque-list {
         position: fixed;
-        top: 100px;
-        left: 50%;
+        border-radius: 14px;
+        padding: 16px;
+        top: 16px;
+        width: 90vw;
         transform: translateX(-50%);
-        width: 90%;
-        max-width: 400px;
-        height: 75vh;
-        border-radius: 35px;
+        height: 85vh;
         box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         z-index: 100;
         margin: 0 auto;
-        padding: 12px;
         display: flex;
         flex-direction: column;   /* stack mosque items vertically */
         gap: 12px;                /* spacing between items */

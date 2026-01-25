@@ -1,0 +1,22 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"settings": {
+		"settings": "Al 3adadat",
+		"select_language": "E5tar lo8a mn el ek2ma adna"
+	},
+	"mosques": {
+		"mosque": "Masjid"
+	},
+	"ercf": {
+		"desc1": "\"East Riding Community Foundation Trust\" 2ad el-3adeed men mobadarat el-tamasok bein el-mogtama3at el-ma7aleya",
+		"desc2": "Barameg wa anshita addat ela tanzeem el-3adeed men el-fa3aleyat el-egtema3eya wel-nadawat el-ta3leemeya",
+		"desc3": "Ayam Ramadan el-maftoo7a, el-khadamat el-deeneya wel-ganazeya, etc.",
+		"desc4": "Khelal ga2e7et COVID-19, tatawa3na ayadan le-tawfeer el-mawad el-ghaza2eya wel-emdadat el-tebeya."
+	},
+	"as-suffa": {
+		"desc": "Tastamed \"AS-SUFFA EDUCATION\" qowwetha men ehtemamat wa moshareket mogtama3na el-ra2e3 men el-khobara2 el-motahamesin wel-mota3allemin mada el-7ayah. Na7n magmoo3a mogtama3eya motanameya norkez 3ala ta7seen magmoo3et anshitatena wa masharee3ena le-talbeyet el-e7teyagat el-motazayeda lel-mogtama3. Naftakhar bekonana mawred ra2e3 wa nofar lel-mosta5demeen forsa lel-tafa3ol ma3 magmoo3a mota3adeda men el-mawadee3 fe be2a3 momte3a wa amena."
+	},
+	"hull-mosque": {
+		"desc": "\"Hull Mosque & Islamic Centre\" howa far3 men el-b3tha el-islameya el-britanya, we et2asas fe Hull 3am 1984. Men thalik el-7een, yekhdem el-mogtama3 be2eso el-markaz el-ra2eesi lel-mogtama3 el-muslim fe Hull. We ya3d Masjed Hull mawred da3m we tawjeeh lel-mogtama3 be2oso, we kan 3ala mor el-sneen noqtet el-ette9al el-awla le-3adeed men el-wafedeen el-godod lel-madina men el-mohajereen wel-la2e2een."
+	}
+}
