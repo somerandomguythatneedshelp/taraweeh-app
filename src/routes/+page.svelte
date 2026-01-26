@@ -1,6 +1,4 @@
 <script lang="ts">
-        import { onMount } from 'svelte';
-        import DropDownMenu from './DropDownMenu.svelte';
         import MainPage from './MainPage.svelte';
 </script>
 

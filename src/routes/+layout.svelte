@@ -10,6 +10,8 @@
         import favicon144x144 from '$lib/assets/favicon144x144.png';
 	import { getTimeDescription } from '$lib/backgroundHelper';
 
+        import { resolve } from '$app/paths';
+
 	let { children } = $props();
 
 	// state
@@ -85,7 +87,7 @@
 
 <div style="display:none">
 	{#each locales as locale}
-		<a href={localizeHref(page.url.pathname, { locale })}>
+		<a href={resolve(localizeHref(page.url.pathname, { locale }))}> <!--if your vscode also gives you an error. ignore it, i18n still works -->
 			{locale}
 		</a>
 	{/each}

@@ -1,9 +1,4 @@
 <script>
-    import { LambdaClient, InvokeCommand } from "@aws-sdk/client-lambda";
-    import { fromCognitoIdentityPool } from '@aws-sdk/credential-provider-cognito-identity';
-    import { S3Client, ListObjectsV2Command, GetObjectCommand } from '@aws-sdk/client-s3';
-    import { getSignedUrl } from '@aws-sdk/s3-request-presigner'
-    import { getLocale, setLocale } from "$lib/paraglide/runtime.js";
     import * as m from "$lib/paraglide/messages.js";
 
     
