@@ -1,54 +1,54 @@
 {
-    "$schema": "https://inlang.com/schema/inlang-message-format",
+	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"errors": {
 		"no_recordings": "There aren't any recordings available yet. Try looking later."
 	},
-    "settings": {
-        "settings": "Settings",
-        "select_language": "Select a language from the menu below"
-    },
-    "mosques": {
-        "mosque": "Mosque",
-		"ai_warning": "Surahs are identified with the help of Artificial Intelligence. Results may not always be correct"
-    },
-    "ercf": {
-        "desc1": "\"East Riding Community Foundation Trust\" has been leading various inter community cohesion",
-        "desc2": "programmes and activities which has lead to various social events, educational seminars, ",
-        "desc3": "Ramadan open days, religious and funeral services etc. ",
-        "desc4": "During the Covid-19 Pandemic, we also volunteered for providing food and medical supplies."
-    },
-    "as-suffa": {
-        "desc": "AS-SUFFA EDUCATION is driven by the interests and involvement of our incredible community of passionate experts and lifelong learners. We are a growing a community based group focused on improving our collection of activities & projects to cater for the growing needs of the community. We pride ourselves on being a great resource and offering the opportunity for users to engage with a variety of topics in an interesting and safe environment."
-    },
-    "hull-mosque": {
-        "desc": "\"Hull Mosque & Islamic Centre\" is a branch of the UK Islamic Mission and was established in Hull in 1984.  Since then, it has served the community as the main hub for the Muslim community in Hull.  A source of support and guidance for the whole community, Hull Mosque has over the years been the first point of contact for the many new arrivals in the city from migrants to refugees."
-    },
-    "s1": {
-			"surah_number": "1",
-			"surah_name": "Al-Fatihah",
-			"short_description": "Known as 'The Opening,' this Surah is a foundational prayer for guidance, acting as a preface that establishes the relationship between the Creator and the seeker of truth.",
-			"fun_fact": "Al-Fatihah was the first complete Surah to be revealed to the Prophet Muhammad ﷺ, even though individual verses of other Surahs were revealed earlier.",
-			"long_description": "Surah Al-Fatihah is the most recited Surah in the daily lives of Muslims, serving as the essential opening of the Quran and every unit of prayer. Its name signifies its role as a preface or an introduction to the Divine Book. Historically, it was revealed very early in Makkah, providing the nascent Muslim community with a comprehensive way to worship and supplicate to Allah.\n\nThe theme of Al-Fatihah is centered on the 'Search for Guidance.' It is structured as a prayer taught by Allah Himself: first, the believer acknowledges Allah's Lordship, Mercy, and Sovereignty; then, the believer declares their exclusive worship and need for help; finally, they ask to be shown the 'Straight Path.' \n\n\n\nThe real beauty of this Surah lies in its connection to the rest of the Quran. It is not merely an introduction, but a petition. When the servant finishes reciting Al-Fatihah, the Master (Allah) presents the rest of the Quran as the direct answer, as if saying: 'This is the guidance you begged from Me.' It sets the necessary mental attitude of humility and sincerity required for any reader to truly benefit from the Divine Message."
+	"settings": {
+		"settings": "Settings",
+		"select_language": "Select a language from the menu below"
 	},
-    "s2": {
-			"surah_number": "2",
-			"surah_name": "Al-Baqarah",
-			"short_description": "The 'Guidance for the God-conscious,' this Surah outlines the social, legal, and spiritual foundations of the Muslim community while contrasting true faith with the pitfalls of hypocrisy and past nations.",
-			"fun_fact": "Despite its name, the Surah is not about cows; it is named after a specific story mentioned in verses 67-73 regarding a cow, used to highlight the Jewish community's tendency toward unnecessary hair-splitting in religious matters.",
-			"long_description": "Surah Al-Baqarah is the longest Surah in the Quran and acts as a detailed manual for the newly formed Islamic society in Madinah. It begins by classifying mankind into three groups: the Believers, the Disbelievers, and the Hypocrites. A significant portion is dedicated to the Children of Israel, reminding them of the favors bestowed upon them and where they went astray, serving as a warning to the new Muslim Ummah to remain sincere to the spirit of the Law.\n\nThe Surah marks a historical shift with the change of the Qiblah from Jerusalem to Makkah, symbolizing the transfer of spiritual leadership to the followers of Muhammad ﷺ. It introduces essential pillars of life such as Fasting (Ramadan), Hajj, and Zakat, alongside civil laws regarding marriage, divorce, and commercial justice. It contains 'Ayat al-Kursi' (the Verse of the Throne), known for its profound description of Allah's sovereignty, and concludes with a powerful prayer for ease and forgiveness, acknowledging the heavy responsibilities placed upon the believers."
-		},
-		"s3": {
-			"surah_number": "3",
-			"surah_name": "Al-i-Imran",
-			"short_description": "A sequel to Al-Baqarah, this Surah addresses the Christian creed, emphasizes the true nature of Jesus, and provides a profound moral review of the Battle of Uhud to strengthen the Muslim community.",
-			"fun_fact": "The Surah is named after the 'Family of Imran' (the father of Maryam), using their story to clear the names of Maryam and Jesus from the slanders of the time and to establish their high status as servants of Allah.",
-			"long_description": "Surah Al-i-Imran consists of four distinct discourses revealed during a period of intense trial for the early Muslim state in Madinah. The first half focuses on theology, particularly inviting the People of the Book—specifically Christians—to recognize that Prophet Muhammad ﷺ brought the same message of Monotheism as their own prophets. It brilliantly uses the logic that if Jesus' birth without a father makes him divine, then Adam (who had neither father nor mother) would be more so, thereby re-establishing Jesus as a noble human Messenger.\n\nThe second half of the Surah deals with the aftermath of the Battle of Uhud. It serves as a spiritual and tactical debrief, explaining that the defeat was a test to distinguish the sincere believers from the hypocrites. It identifies the love of worldly gain (greed) as a primary cause of failure and subsequently introduces the prohibition of interest (Riba) to purify the community's economy. The Surah concludes with a beautiful call to patience and a reminder that true success comes from God-consciousness and intellectual reflection on the creation of the heavens and the earth."
-		},
-		"s4": {
-			"surah_number": "4",
-			"surah_name": "An-Nisa",
-			"short_description": "Meaning 'The Women,' this Surah establishes the legal and social framework for the Muslim community, focusing on family rights, inheritance, and the protection of orphans and the weak.",
-			"fun_fact": "This Surah contains a final verse (v. 176) regarding inheritance that was revealed much later than the rest of the Surah, but was added at the end because it supplemented the family laws discussed in the opening verses.",
-			"long_description": "Surah An-Nisa was revealed between A.H. 3 and A.H. 5, a critical period for the consolidation of the Islamic State in Madinah. Following the Battle of Uhud, where 70 Muslims were martyred, the community faced the urgent need for a structured system to protect orphans and distribute inheritance fairly. This Surah provides those detailed legal rulings, moving society away from the chaotic customs of the pre-Islamic era.\n\n\n\nBeyond family law, the Surah deals with the defense of the community. It addresses the rising threat of 'Hypocrites' (Munafiqin) and the hostile plots of local tribes like the Banu Nadir. It introduces the 'Salat of Fear' for soldiers in the field and allows for dry ablution (Tayammum) when water is scarce, ensuring that spiritual duties are maintained even during military expeditions. The central theme is the 'Consolidation of the Community'—building a strong society through high moral character, strict justice even toward enemies, and the firm protection of the rights of women and the oppressed."
-		}
+	"mosques": {
+		"mosque": "Mosque",
+		"ai_warning": "Surahs are identified with the help of Artificial Intelligence. Results may not always be correct"
+	},
+	"ercf": {
+		"desc1": "\"East Riding Community Foundation Trust\" has been leading various inter community cohesion",
+		"desc2": "programmes and activities which has lead to various social events, educational seminars, ",
+		"desc3": "Ramadan open days, religious and funeral services etc. ",
+		"desc4": "During the Covid-19 Pandemic, we also volunteered for providing food and medical supplies."
+	},
+	"as-suffa": {
+		"desc": "AS-SUFFA EDUCATION is driven by the interests and involvement of our incredible community of passionate experts and lifelong learners. We are a growing a community based group focused on improving our collection of activities & projects to cater for the growing needs of the community. We pride ourselves on being a great resource and offering the opportunity for users to engage with a variety of topics in an interesting and safe environment."
+	},
+	"hull-mosque": {
+		"desc": "\"Hull Mosque & Islamic Centre\" is a branch of the UK Islamic Mission and was established in Hull in 1984.  Since then, it has served the community as the main hub for the Muslim community in Hull.  A source of support and guidance for the whole community, Hull Mosque has over the years been the first point of contact for the many new arrivals in the city from migrants to refugees."
+	},
+	"s1": {
+		"surah_number": "1",
+		"surah_name": "Al-Fatihah",
+		"short_description": "Known as 'The Opening,' this Surah is a foundational prayer for guidance, acting as a preface that establishes the relationship between the Creator and the seeker of truth.",
+		"fun_fact": "Al-Fatihah was the first complete Surah to be revealed to the Prophet Muhammad ﷺ, even though individual verses of other Surahs were revealed earlier.",
+		"long_description": "Surah Al-Fatihah is the most recited Surah in the daily lives of Muslims, serving as the essential opening of the Quran and every unit of prayer. Its name signifies its role as a preface or an introduction to the Divine Book. Historically, it was revealed very early in Makkah, providing the nascent Muslim community with a comprehensive way to worship and supplicate to Allah.\n\nThe theme of Al-Fatihah is centered on the 'Search for Guidance.' It is structured as a prayer taught by Allah Himself: first, the believer acknowledges Allah's Lordship, Mercy, and Sovereignty; then, the believer declares their exclusive worship and need for help; finally, they ask to be shown the 'Straight Path.' \n\n\n\nThe real beauty of this Surah lies in its connection to the rest of the Quran. It is not merely an introduction, but a petition. When the servant finishes reciting Al-Fatihah, the Master (Allah) presents the rest of the Quran as the direct answer, as if saying: 'This is the guidance you begged from Me.' It sets the necessary mental attitude of humility and sincerity required for any reader to truly benefit from the Divine Message."
+	},
+	"s2": {
+		"surah_number": "2",
+		"surah_name": "Al-Baqarah",
+		"short_description": "The 'Guidance for the God-conscious,' this Surah outlines the social, legal, and spiritual foundations of the Muslim community while contrasting true faith with the pitfalls of hypocrisy and past nations.",
+		"fun_fact": "Despite its name, the Surah is not about cows; it is named after a specific story mentioned in verses 67-73 regarding a cow, used to highlight the Jewish community's tendency toward unnecessary hair-splitting in religious matters.",
+		"long_description": "Surah Al-Baqarah is the longest Surah in the Quran and acts as a detailed manual for the newly formed Islamic society in Madinah. It begins by classifying mankind into three groups: the Believers, the Disbelievers, and the Hypocrites. A significant portion is dedicated to the Children of Israel, reminding them of the favors bestowed upon them and where they went astray, serving as a warning to the new Muslim Ummah to remain sincere to the spirit of the Law.\n\nThe Surah marks a historical shift with the change of the Qiblah from Jerusalem to Makkah, symbolizing the transfer of spiritual leadership to the followers of Muhammad ﷺ. It introduces essential pillars of life such as Fasting (Ramadan), Hajj, and Zakat, alongside civil laws regarding marriage, divorce, and commercial justice. It contains 'Ayat al-Kursi' (the Verse of the Throne), known for its profound description of Allah's sovereignty, and concludes with a powerful prayer for ease and forgiveness, acknowledging the heavy responsibilities placed upon the believers."
+	},
+	"s3": {
+		"surah_number": "3",
+		"surah_name": "Al-i-Imran",
+		"short_description": "A sequel to Al-Baqarah, this Surah addresses the Christian creed, emphasizes the true nature of Jesus, and provides a profound moral review of the Battle of Uhud to strengthen the Muslim community.",
+		"fun_fact": "The Surah is named after the 'Family of Imran' (the father of Maryam), using their story to clear the names of Maryam and Jesus from the slanders of the time and to establish their high status as servants of Allah.",
+		"long_description": "Surah Al-i-Imran consists of four distinct discourses revealed during a period of intense trial for the early Muslim state in Madinah. The first half focuses on theology, particularly inviting the People of the Book—specifically Christians—to recognize that Prophet Muhammad ﷺ brought the same message of Monotheism as their own prophets. It brilliantly uses the logic that if Jesus' birth without a father makes him divine, then Adam (who had neither father nor mother) would be more so, thereby re-establishing Jesus as a noble human Messenger.\n\nThe second half of the Surah deals with the aftermath of the Battle of Uhud. It serves as a spiritual and tactical debrief, explaining that the defeat was a test to distinguish the sincere believers from the hypocrites. It identifies the love of worldly gain (greed) as a primary cause of failure and subsequently introduces the prohibition of interest (Riba) to purify the community's economy. The Surah concludes with a beautiful call to patience and a reminder that true success comes from God-consciousness and intellectual reflection on the creation of the heavens and the earth."
+	},
+	"s4": {
+		"surah_number": "4",
+		"surah_name": "An-Nisa",
+		"short_description": "Meaning 'The Women,' this Surah establishes the legal and social framework for the Muslim community, focusing on family rights, inheritance, and the protection of orphans and the weak.",
+		"fun_fact": "This Surah contains a final verse (v. 176) regarding inheritance that was revealed much later than the rest of the Surah, but was added at the end because it supplemented the family laws discussed in the opening verses.",
+		"long_description": "Surah An-Nisa was revealed between A.H. 3 and A.H. 5, a critical period for the consolidation of the Islamic State in Madinah. Following the Battle of Uhud, where 70 Muslims were martyred, the community faced the urgent need for a structured system to protect orphans and distribute inheritance fairly. This Surah provides those detailed legal rulings, moving society away from the chaotic customs of the pre-Islamic era.\n\n\n\nBeyond family law, the Surah deals with the defense of the community. It addresses the rising threat of 'Hypocrites' (Munafiqin) and the hostile plots of local tribes like the Banu Nadir. It introduces the 'Salat of Fear' for soldiers in the field and allows for dry ablution (Tayammum) when water is scarce, ensuring that spiritual duties are maintained even during military expeditions. The central theme is the 'Consolidation of the Community'—building a strong society through high moral character, strict justice even toward enemies, and the firm protection of the rights of women and the oppressed."
+	}
 }

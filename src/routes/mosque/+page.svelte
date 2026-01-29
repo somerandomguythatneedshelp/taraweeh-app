@@ -20,7 +20,8 @@
 		}
 	};
 
-	$: mosque = mosqueId ? mosques[mosqueId] : undefined;
+	$: mosque = mosqueId ? mosques[mosqueId as keyof typeof mosques] : undefined;
+
 
 	export let data;
 	let recordings = data.recordings ?? [];
@@ -37,6 +38,7 @@
 		// helper func
 		const date = new Date(dateStr);
 		const today = new Date();
+		// eslint-disable-next-line svelte/prefer-svelte-reactivity
 		const yesterday = new Date();
 		yesterday.setDate(today.getDate() - 1);
 
@@ -75,7 +77,7 @@
 			{/each}
 		</div>
 
-		<div class="max-h-[500px] space-y-4 overflow-y-auto pr-2 mt-5">
+		<div class="mt-5 max-h-[500px] space-y-4 overflow-y-auto pr-2">
 			{#if Object.keys(groupedRecordings).length > 0}
 				<!-- eslint-disable-next-line svelte/require-each-key -->
 				{#each Object.entries(groupedRecordings) as [date, recordings]}
@@ -88,7 +90,7 @@
 								{getDateLabel(date)}
 							</h3>
 						</div>
-						
+
 						<!-- RECORDINGS -->
 						{#each recordings as rec (rec.id)}
 							<div
@@ -131,7 +133,7 @@
 									{/each}
 								</div>
 
-								<audio controls src={rec.audio_url} class="h-10 w-full accent-emerald-500" />
+								<audio controls src={rec.audio_url} class="h-10 w-full accent-emerald-500"> </audio>
 							</div>
 						{/each}
 					</div>
