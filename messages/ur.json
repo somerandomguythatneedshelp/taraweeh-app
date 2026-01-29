@@ -1,11 +1,15 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"errors": {
+		"no_recordings": "ابھی تک کوئی ریکارڈنگ دستیاب نہیں ہے۔ بعد میں دوبارہ دیکھیں۔"
+	},
 	"settings": {
 		"settings": "ترتیبات",
 		"select_language": "مندرجہ ذیل مینو سے ایک زبان منتخب کریں۔"
 	},
 	"mosques": {
-		"mosque": "مسجد"
+		"mosque": "مسجد",
+		"ai_warning": "سورتیں مصنوعی ذہانت کی مدد سے شناخت کی جاتی ہیں۔ نتائج ہمیشہ درست نہیں ہوتے۔"
 	},
 	"ercf": {
 		"desc1": "\"East Riding Community Foundation Trust\" مختلف بین الاشتراکی ہم آہنگی کی قیادت کر رہا ہے",

@@ -1,11 +1,15 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"errors": {
+		"no_recordings": "Det finns inga inspelningar tillgängliga ännu. Försök igen senare."
+	},
 	"settings": {
 		"settings": "Inställningar",
 		"select_language": "Välj ett språk från menyn nedan"
 	},
 	"mosques": {
-		"mosque": "Moské"
+		"mosque": "Moské",
+		"ai_warning": "Suraerna identifieras med hjälp av artificiell intelligens. Resultaten är inte alltid korrekta."
 	},
 	"ercf": {
 		"desc1": "\"East Riding Community Foundation Trust\" har lett olika initiativ för sammanhållning mellan olika grupper",

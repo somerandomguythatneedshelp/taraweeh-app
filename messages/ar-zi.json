@@ -1,11 +1,15 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"errors": {
+		"no_recordings": "La yogad ay tasgeelat motaha 7atta el-aan. 7awel el-ba7th la7e2an."
+	},
 	"settings": {
 		"settings": "Al 3adadat",
 		"select_language": "E5tar lo8a mn el ek2ma adna"
 	},
 	"mosques": {
-		"mosque": "Masjid"
+		"mosque": "Masjid",
+		"ai_warning": "Yetem ta7deed sowar el-Quran bemosa3adet el-zekaa el-sena3y. Momken el-nata2eg ma tekonsh sa7ee7 da2eman."
 	},
 	"ercf": {
 		"desc1": "\"East Riding Community Foundation Trust\" 2ad el-3adeed men mobadarat el-tamasok bein el-mogtama3at el-ma7aleya",

@@ -1,11 +1,15 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"errors": {
+		"no_recordings": "لا توجد أي تسجيلات متاحة حتى الآن. حاول البحث لاحقًا."
+	},
 	"settings": {
 		"settings": "الإعدادات",
 		"select_language": "اختر لغة من القائمة أدناه"
 	},
 	"mosques": {
-		"mosque": "مسجد"
+		"mosque": "مسجد",
+		"ai_warning": "يتم تحديد سور القرآن بمساعدة الذكاء الاصطناعي. قد لا تكون النتائج صحيحة دائمًا."
 	},
 	"ercf": {
 		"desc1": "\"East Riding Community Foundation Trust\" قاد العديد من مبادرات التماسك بين المجتمعات المحلية",

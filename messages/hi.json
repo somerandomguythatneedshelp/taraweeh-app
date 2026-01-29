@@ -1,11 +1,15 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"errors": {
+		"no_recordings": "अभी तक कोई रिकॉर्डिंग उपलब्ध नहीं है। बाद में फिर से देखें।"
+	},
 	"settings": {
 		"settings": "सेटिंग्स",
 		"select_language": "नीचे दिए गए मेनू से एक भाषा चुनें"
 	},
 	"mosques": {
-		"mosque": "मस्जिद"
+		"mosque": "मस्जिद",
+		"ai_warning": "सूरहों की पहचान कृत्रिम बुद्धिमत्ता की सहायता से की जाती है। परिणाम हमेशा सही नहीं हो सकते।"
 	},
 	"ercf": {
 		"desc1": "\"East Riding Community Foundation Trust\" विभिन्न अंतर-सामुदायिक एकजुटता का नेतृत्व कर रहे हैं",
