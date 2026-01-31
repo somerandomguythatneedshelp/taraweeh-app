@@ -15,7 +15,6 @@
 	function handleChange(event: Event) {
 		const target = event.target as HTMLSelectElement;
 		setLocale(target.value as 'en' | 'ar' | 'ur' | 'arz' | 'sv' | 'hi' | 'ar-zi', { reload: true });
-
 	}
 </script>
 

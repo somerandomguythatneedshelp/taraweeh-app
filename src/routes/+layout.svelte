@@ -87,11 +87,10 @@
 <div style="display:none">
 	<!-- eslint-disable-next-line svelte/require-each-key -->
 	{#each locales as locale}
-		<a href={resolve(localizeHref(page.url.pathname, { locale }) as "/" | "/mosque" | "/mosque/")}>
+		<a href={resolve(localizeHref(page.url.pathname, { locale }) as '/' | '/mosque' | '/mosque/')}>
 			{locale}
 		</a>
 	{/each}
-
 </div>
 
 <style>

@@ -12,21 +12,21 @@
 	<div>
 		<div class="mosque-list bg-black/30">
 			<!-- a list containing all of the mosques/masjids -->
-			<a href={resolve('/mosque?m=brough-mosque' as any)}>
+			<a href={resolve('/mosque?m=brough-mosque' as '/mosque')}>
 				<button class="mosque bg-black/50" id="brough-mosque">
 					<span class="mosque-title">East Riding Community Foundation Centre</span>
 					<br />
 					<span class="mosque-address">Welton craft, 6 Common Ln, Welton, Brough HU15 1PT</span>
 				</button>
 			</a>
-			<a href={resolve('/mosque?m=as-suffa'  as any)}>
+			<a href={resolve('/mosque?m=as-suffa' as '/mosque')}>
 				<button class="mosque bg-black/50" id="as-suffa">
 					<span class="mosque-title">As-Suffa Education</span>
 					<br />
 					<span class="mosque-address">As Suffa Education, Walker St, Hull HU3 2HD</span>
 				</button>
 			</a>
-			<a href={resolve('/mosque?m=hull-mosque'  as any)}>
+			<a href={resolve('/mosque?m=hull-mosque' as '/mosque')}>
 				<button class="mosque bg-black/50" id="hull-mosque">
 					<span class="mosque-title">Hull Mosque & Islamic Centre</span>
 					<br />
