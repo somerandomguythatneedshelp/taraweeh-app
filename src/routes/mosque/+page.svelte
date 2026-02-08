@@ -4,6 +4,10 @@
   import { slide } from 'svelte/transition';
   import { SvelteSet } from 'svelte/reactivity';
   import { SvelteDate } from 'svelte/reactivity';
+  import { onMount } from 'svelte';
+  import { surahId } from '$lib/stores.js';
+  import SurahInfo from '../../components/SurahInfo.svelte';
+  import { goto } from '$app/navigation';
 
   // Types to stop the headaches
   interface Surah {
@@ -51,6 +55,28 @@
   }
 
   $: mosqueId = $page.url.searchParams.get('m');
+  $: surahInfo = $page.url.searchParams.get('s');
+
+  /* 
+  mosqueId contains the actual mosuqe information, typically
+  selected from the home screen, an example would be 
+  https://tune-mu.com/mosque?m=as-suffa 
+  this would redirect the user to the as-suffa mosque page
+  
+  surahInfo on the other hand is used to display the surah
+  information card, this is triggered when a user clicks
+  on a specific surah in the recording details, an example url would be
+  https://tune-mu.com/mosque?m=as-suffa&s=2
+  the reason we keep the original mosque query parameter is so that we can 
+  still show the mosque's page when the user clicks to go back to the previous
+  page.
+  */
+
+  onMount(() => {
+    if (surahInfo) {
+      surahId.set(parseInt(surahInfo));
+    }
+  });
 
   const mosques = {
     'brough-mosque': {
@@ -109,7 +135,8 @@
 
   /* 
     We ignore this reactive statement for eslint because the linter
-    thinks that nothing in here CAN change, so it throws an error */
+    thinks that nothing in here CAN change, so it throws an error 
+  */
 
   // eslint-disable-next-line svelte/no-immutable-reactive-statements
   $: {
@@ -128,7 +155,9 @@
 </script>
 
 <div class="settings-card border border-white/10 shadow-2xl">
-  {#if mosque}
+  {#if surahInfo}
+    <SurahInfo></SurahInfo>
+  {:else if mosque}
     <header class="mb-6 border-b border-white/10 pb-4">
       <h1
         class="bg-gradient-to-r from-white to-white/60 bg-clip-text text-2xl font-bold text-transparent"
@@ -206,11 +235,12 @@
                   >
                     <span
                       >{isCollapsed
-                        ? 'View Breakdown'
-                        : 'Hide Breakdown'}</span
+                        ? m['quran.view_surahs']()
+                        : m['quran.hide_surahs']()}</span
                     >
                     <span class="text-slate-500"
-                      >{rec.surahs?.length || 0} tracks</span
+                      >{rec.surahs?.length || 0}
+                      {m['quran.rakats']()}</span
                     >
                   </button>
                 {/if}
@@ -221,7 +251,8 @@
                     class="mt-3 grid gap-2"
                   >
                     {#each rec.surahs ?? [] as s, i (i)}
-                      <button
+                    <div class="flex items-center gap-2 w-full">
+                       <button
                         on:click={() =>
                           seekTo(rec.id, s.timestamp_start)}
                         class="group/item flex items-center gap-4 rounded-xl p-2 transition-all hover:bg-emerald-500/10"
@@ -245,26 +276,26 @@
                           >
                             {#if s.rakat_number}
                               <span class="text-emerald-500/60"
-                                >Rak'at {s.rakat_number}</span
+                                >{m['quran.rakat']()}
+                                {s.rakat_number}</span
                               >
-                              <span>•</span>
                             {/if}
-                            <span>{s.detected_ayahs || 0} Ayahs</span
-                            >
                           </div>
                         </div>
 
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          class="h-4 w-4 text-emerald-500 opacity-0 group-hover/item:opacity-100"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                          />
-                        </svg>
                       </button>
+                      
+                      <!--
+                      add an empty title tag otherwise warnings 
+                      would clutter the UI of the IDE and build
+                      logs
+                      -->
+                      <button class="p-2 text-slate-500 hover:text-emerald-400 transition-colors rounded-lg hover:bg-emerald-500/10" title="" on:click={() => { surahId.set(s.surah_number); goto(`/mosque?m=${mosqueId}&s=${s.surah_number}`); }}> 
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>
+                          </svg>
+                        </button>
+                    </div>
                     {/each}
                   </div>
                 {/if}
@@ -316,10 +347,10 @@
 
 <style>
   .settings-card {
-    position: absolute;
-    top: 5vh;
-    left: 16px;
-    right: 16px;
+    position: relative;
+    margin-top: 5vh;
+    margin-left: 16px;
+    margin-right: 16px;
     background: linear-gradient(
       135deg,
       rgba(15, 15, 15, 0.8),

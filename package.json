@@ -24,6 +24,7 @@
     "@sveltejs/adapter-vercel": "^6.3.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "lucide-svelte": "^0.563.0",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {

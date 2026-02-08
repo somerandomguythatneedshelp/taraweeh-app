@@ -112,6 +112,8 @@
 {/if}
 
 <div class="background app-container {fontStyle} {backgroundClass}">
+  <div class="stars-layer"></div>
+  <!-- twinkles here -->
   {@render children()}
 </div>
 
@@ -169,18 +171,53 @@
 
   .background {
     width: 100%;
-    height: 100vh;
-    display: flex; /* center content */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
     align-items: center;
-    justify-content: center;
-    transition: background 0.5s ease; /* smooth background changes */
-    color: white; /* text color */
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-    margin: 0;
-    padding: 0;
+    min-height: 100vh;
+    color: white;
+    height: 100%;
+  }
+
+  .stars-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      radial-gradient(
+        1px 1px at 25px 5px,
+        white,
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        1px 1px at 50px 25px,
+        white,
+        rgba(255, 255, 255, 0)
+      );
+  }
+
+  .sun-glow {
+    position: fixed;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 200px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .app-container {
+    position: relative;
+    z-index: 1;
+    padding: 40px 20px;
+    margin: 0 auto;
   }
 
   .sunlight {
@@ -191,7 +228,6 @@
     margin: 0;
     min-height: 100vh;
     background-color: #0d0d1f;
-    /* Vertical gradient: Midnight Blue -> Near Black -> Charcoal */
     background: linear-gradient(
       180deg,
       #1b1b3a 0%,
@@ -203,7 +239,7 @@
       -apple-system,
       sans-serif;
     color: white;
-    overflow-x: hidden; /* Prevents scrollbars from star overflow */
+    overflow-x: hidden;
     position: relative;
   }
 
@@ -248,19 +284,12 @@
       );
 
     background-size: 550px 550px;
-    opacity: 0.3; /* Base brightness */
+    opacity: 0.3;
     pointer-events: none;
     z-index: 0;
   }
 
   .sunset::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
     background-image:
       radial-gradient(
         1px 1px at 75px 125px,
@@ -282,12 +311,7 @@
         white,
         rgba(255, 255, 255, 0)
       );
-
-    background-size: 400px 400px;
-
     animation: twinkle 4s infinite ease-in-out;
-    pointer-events: none;
-    z-index: 0;
   }
 
   @keyframes twinkle {
@@ -303,28 +327,16 @@
   }
 
   .golden_hour {
-    margin: 0;
-    min-height: 100vh;
     background-color: #ffb347;
-    /* Vertical gradient: Deep Purple (Top) -> Soft Pink -> Golden Orange (Horizon) */
     background: linear-gradient(
       180deg,
       #2b102f 0%,
       #7d3450 50%,
       #ff9a42 100%
     );
-    font-family:
-      system-ui,
-      -apple-system,
-      sans-serif;
-    color: white;
-    /* Adding a subtle text shadow ensures white text is readable against the bright orange bottom */
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    overflow-x: hidden;
-    position: relative;
   }
 
-  /* 2. Layer 1: Faint Background Stars */
   .golden_hour::before {
     content: '';
     position: absolute;
@@ -333,7 +345,6 @@
     width: 100%;
     height: 100%;
 
-    /* Scattered stars */
     background-image:
       radial-gradient(
         1px 1px at 25px 5px,
@@ -355,26 +366,22 @@
         #ffeebb,
         rgba(255, 255, 255, 0)
       ),
-      /* Slightly yellow stars */
       radial-gradient(
-          1px 1px at 20px 200px,
-          #ffddee,
-          rgba(255, 255, 255, 0)
-        ),
+        1px 1px at 20px 200px,
+        #ffddee,
+        rgba(255, 255, 255, 0)
+      ),
       radial-gradient(
         1px 1px at 100px 250px,
         white,
         rgba(255, 255, 255, 0)
       );
 
-    background-size: 550px 550px;
-    /* Lower opacity because stars are faint at sunset */
     opacity: 0.25;
     pointer-events: none;
     z-index: 0;
   }
 
-  /* 3. Layer 2: Twinkling Stars */
   .golden_hour::after {
     content: '';
     position: absolute;
@@ -401,7 +408,7 @@
       );
 
     background-size: 400px 400px;
-    animation: twinkle 5s infinite ease-in-out; /* Slower twinkle for a calm sunset */
+    animation: twinkle 5s infinite ease-in-out;
     pointer-events: none;
     z-index: 0;
   }
@@ -412,26 +419,10 @@
     }
     50% {
       opacity: 0.5;
-    } /* Max opacity is lower than night mode */
+    }
     100% {
       opacity: 0.1;
     }
-  }
-
-  .sun-glow {
-    position: fixed;
-    bottom: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 200px;
-    background: radial-gradient(
-      circle,
-      rgba(255, 220, 150, 0.4) 0%,
-      rgba(255, 154, 66, 0) 70%
-    );
-    pointer-events: none;
-    z-index: 0;
   }
 
   .night {
@@ -442,8 +433,7 @@
         transparent 50%
       ),
       linear-gradient(180deg, #12122b 0%, #1c1c3d 100%);
-    background-color: #12122b; /* Fallback */
-    background-attachment: fixed;
+    background-color: #12122b;
   }
 
   .twilight {
@@ -451,19 +441,5 @@
   }
   .sunrise {
     background: linear-gradient(#83664a, #697b9c);
-  }
-
-  .app-container {
-    position: relative;
-    z-index: 1;
-    padding: 40px 20px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  div {
-    transition: background 0.5s ease; /* smooth changes */
-    width: max-content;
-    height: max-content;
   }
 </style>

@@ -24,7 +24,12 @@
     "desc": "\"Hull Mosque & Islamic Centre\" is a branch of the UK Islamic Mission and was established in Hull in 1984.  Since then, it has served the community as the main hub for the Muslim community in Hull.  A source of support and guidance for the whole community, Hull Mosque has over the years been the first point of contact for the many new arrivals in the city from migrants to refugees."
   },
   "quran": {
-    "taraweeh": "Taraweeh"
+    "taraweeh": "Taraweeh",
+    "surahs": "Surahs",
+    "rakats": "Rak'ats",
+    "rakat": "Rak'at",
+    "view_surahs": "View Surahs",
+    "hide_surahs": "Hide Surahs"
   },
   "s1": {
     "surah_number": "1",
