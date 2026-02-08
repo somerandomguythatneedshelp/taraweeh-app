@@ -20,10 +20,9 @@
 				change so resolve is not needed -->
 
       <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-      <button
+      <button on:click={() => goto('/mosque?m=brough-mosque')}
         class="mosque bg-black/50"
         id="brough-mosque"
-        on:click={() => goto('/mosque?m=brough-mosque')}
         data-sveltekit-noscroll
       >
         <span class="mosque-title"
@@ -35,10 +34,9 @@
         >
       </button>
       <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-      <button
+      <button on:click={() => goto('/mosque?m=as-suffa')}
         class="mosque bg-black/50"
         id="as-suffa"
-        on:click={() => goto('/mosque?m=as-suffa')}
         data-sveltekit-noscroll
       >
         <span class="mosque-title">As-Suffa Education</span>
@@ -48,10 +46,9 @@
         >
       </button>
       <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-      <button
+      <button on:click={() => goto('/mosque?m=hull-mosque')}
         class="mosque bg-black/50"
         id="hull-mosque"
-        on:click={() => goto('/mosque?m=hull-mosque')}
         data-sveltekit-noscroll
       >
         <span class="mosque-title">Hull Mosque & Islamic Centre</span

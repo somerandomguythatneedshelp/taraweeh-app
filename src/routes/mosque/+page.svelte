@@ -251,51 +251,74 @@
                     class="mt-3 grid gap-2"
                   >
                     {#each rec.surahs ?? [] as s, i (i)}
-                    <div class="flex items-center gap-2 w-full">
-                       <button
-                        on:click={() =>
-                          seekTo(rec.id, s.timestamp_start)}
-                        class="group/item flex items-center gap-4 rounded-xl p-2 transition-all hover:bg-emerald-500/10"
-                      >
-                        <div
-                          class="font-surah flex h-10 items-center justify-center rounded-lg bg-black/40 pr-2 text-2xl text-white/40 group-hover/item:text-emerald-400"
+                      <div class="flex w-full items-center gap-2">
+                        <button
+                          on:click={() =>
+                            seekTo(rec.id, s.timestamp_start)}
+                          class="group/item flex items-center gap-4 rounded-xl p-2 transition-all hover:bg-emerald-500/10"
                         >
-                          {s.surah_number
-                            .toString()
-                            .padStart(3, '0')}
-                        </div>
-
-                        <div class="flex-grow text-left">
                           <div
-                            class="text-sm font-bold text-slate-200 group-hover/item:text-white"
+                            class="font-surah flex h-10 items-center justify-center rounded-lg bg-black/40 pr-2 text-2xl text-white/40 group-hover/item:text-emerald-400"
                           >
-                            {s.surah_name}
+                            {s.surah_number
+                              .toString()
+                              .padStart(3, '0')}
                           </div>
-                          <div
-                            class="flex items-center gap-2 text-[10px] text-slate-500"
-                          >
-                            {#if s.rakat_number}
-                              <span class="text-emerald-500/60"
-                                >{m['quran.rakat']()}
-                                {s.rakat_number}</span
-                              >
-                            {/if}
-                          </div>
-                        </div>
 
-                      </button>
-                      
-                      <!--
+                          <div class="flex-grow text-left">
+                            <div
+                              class="text-sm font-bold text-slate-200 group-hover/item:text-white"
+                            >
+                              {s.surah_name}
+                            </div>
+                            <div
+                              class="flex items-center gap-2 text-[10px] text-slate-500"
+                            >
+                              {#if s.rakat_number}
+                                <span class="text-emerald-500/60"
+                                  >{m['quran.rakat']()}
+                                  {s.rakat_number}</span
+                                >
+                              {/if}
+                            </div>
+                          </div>
+                        </button>
+
+                        <!--
                       add an empty title tag otherwise warnings 
                       would clutter the UI of the IDE and build
                       logs
                       -->
-                      <button class="p-2 text-slate-500 hover:text-emerald-400 transition-colors rounded-lg hover:bg-emerald-500/10" title="" on:click={() => { surahId.set(s.surah_number); goto(`/mosque?m=${mosqueId}&s=${s.surah_number}`); }}> 
-                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>
+                        <button
+                          class="rounded-lg p-2 text-slate-500 transition-colors hover:bg-emerald-500/10 hover:text-emerald-400"
+                          title=""
+                          on:click={() => {
+                            surahId.set(s.surah_number);
+                            // im ignoring eslint here because i would rather
+                            // fuck a donkey than figure out why eslint is flagging
+                            // this and furthermore, why actually using resolve from
+                            // 'path' still doesnt work and throws a 500 internal error
+                            // eslint-disable-next-line svelte/no-navigation-without-resolve
+                            goto(`/mosque?m=${mosqueId}&s=${s.surah_number}`);
+                          }}
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <circle cx="12" cy="12" r="10" /><path
+                              d="M12 16v-4"
+                            /><path d="M12 8h.01" />
                           </svg>
                         </button>
-                    </div>
+                      </div>
                     {/each}
                   </div>
                 {/if}

@@ -1,7 +1,21 @@
 <script lang="ts">
   import * as m from '$lib/paraglide/messages.js';
   import { surahId } from '$lib/stores.js';
-  import { ArrowLeft, Sparkles, BookOpen } from 'lucide-svelte'; // Optional: icons make a big difference
+  import { ArrowLeft, Sparkles, BookOpen } from 'lucide-svelte';
+
+  type MessagesMap = {
+    [key: `s${number}.surah_name`]: () => string;
+    [key: `s${number}.fun_fact`]: () => string;
+    [key: `s${number}.long_description`]: () => string;
+    [key: `s${number}.short_description`]: () => string;
+    [key: `s${number}.surah_number`]: () => string;
+  };
+
+  // surah_number being a string is intentional
+  // because paraglide will shit itself if it 
+  // finds one number thats not in quotes
+
+  const mm = m as unknown as MessagesMap;
 </script>
 
 <div
@@ -23,7 +37,7 @@
   <main class="w-full max-w-2xl overflow-hidden rounded-3xl">
     <header class="text-center">
       <h1 class="mt-2 font-serif text-4xl font-bold text-slate-800">
-        {m['s' + $surahId + '.surah_name']()}
+        {mm[`s${$surahId}.surah_name`]()}
       </h1>
       <p class="mt-4 text-sm text-slate-500 italic">
         Note: Information is currently available in English only.
@@ -40,7 +54,7 @@
             >
           </div>
           <p class="leading-relaxed text-slate-600 italic">
-            {m['s' + $surahId + '.fun_fact']()}
+            {mm[`s${$surahId}.fun_fact`]()}
           </p>
         </div>
       </section>
@@ -51,16 +65,9 @@
           <h2 class="text-lg font-bold">About this Surah</h2>
         </div>
         <div class="prose leading-7 text-slate-600 prose-slate">
-          {m['s' + $surahId + '.long_description']()}
+          {mm[`s${$surahId}.long_description`]()}
         </div>
       </section>
     </div>
   </main>
 </div>
-
-<style>
-  /* Adding a serif font for the titles adds a traditional, scholarly feel */
-  :global(h1) {
-    font-family: 'Times New Roman', serif;
-  }
-</style>
