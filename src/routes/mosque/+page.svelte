@@ -1,231 +1,351 @@
 <script lang="ts">
-	// ts giving me a headache
-	import { page } from '$app/stores';
-	import * as m from '$lib/paraglide/messages.js';
+  import { page } from '$app/stores';
+  import * as m from '$lib/paraglide/messages.js';
+  import { slide } from 'svelte/transition';
+  import { SvelteSet } from 'svelte/reactivity';
+  import { SvelteDate } from 'svelte/reactivity';
 
-	$: mosqueId = $page.url.searchParams.get('m');
+  // Types to stop the headaches
+  interface Surah {
+    surah_number: number;
+    surah_name: string;
+    timestamp_start?: number;
+    rakat_number?: number;
+    detected_ayahs?: number;
+  }
 
-	const mosques = {
-		'brough-mosque': {
-			name: 'East Riding Community Foundation Centre',
-			desc: [m['ercf.desc1'], m['ercf.desc2'], m['ercf.desc3'], m['ercf.desc4']]
-		},
-		'as-suffa': {
-			name: 'As-Suffa Education',
-			desc: [m['as-suffa.desc']]
-		},
-		'hull-mosque': {
-			name: 'Hull Mosque & Islamic Centre',
-			desc: [m['hull-mosque.desc']]
-		}
-	};
+  interface Recording {
+    id: string;
+    date: string;
+    nickname: string;
+    audio_url: string;
+    type: 'taraweeh' | 'other';
+    surahs: Surah[];
+  }
 
-	$: mosque = mosqueId ? mosques[mosqueId as keyof typeof mosques] : undefined;
+  export let data: { recordings: Recording[] };
+  let recordings = data.recordings ?? [];
 
-	export let data;
-	let recordings = data.recordings ?? [];
+  let expandedRecs = new SvelteSet<string>();
+  let activeRecordingId: string | null = null;
 
-	const isSameDay = (
-		a: Date,
-		b: Date // helper func
-	) =>
-		a.getFullYear() === b.getFullYear() &&
-		a.getMonth() === b.getMonth() &&
-		a.getDate() === b.getDate();
+  function toggleDetails(id: string) {
+    const newSet = new SvelteSet(expandedRecs);
 
-	const getDateLabel = (dateStr: string) => {
-		// helper func
-		const date = new Date(dateStr);
-		const today = new Date();
-		// eslint-disable-next-line svelte/prefer-svelte-reactivity
-		const yesterday = new Date();
-		yesterday.setDate(today.getDate() - 1);
+    // the reason for using if statements instead of toggle
+    // is because eslint doesn't recognize the toggle method
+    // and throws an error, even though it works perfectly fine
+    if (expandedRecs.has(id)) {
+      newSet.delete(id);
+    } else {
+      newSet.add(id);
+    }
+    expandedRecs = newSet;
+  }
 
-		if (isSameDay(date, today)) return 'Tonight';
-		if (isSameDay(date, yesterday)) return 'Yesterday';
+  function shouldCollapse(rec: Recording) {
+    return (
+      rec.type === 'taraweeh' ||
+      (rec.surahs && rec.surahs.length > 4)
+    );
+  }
 
-		return date.toLocaleDateString('en-GB', {
-			day: '2-digit',
-			month: 'long'
-		});
-	};
+  $: mosqueId = $page.url.searchParams.get('m');
 
-	function formatSurahNumber(num: number): string {
-		return num.toString().padStart(3, '0');
-	}
+  const mosques = {
+    'brough-mosque': {
+      name: 'East Riding Community Foundation',
+      desc: [m['ercf.desc1'], m['ercf.desc2'], m['ercf.desc3']]
+    },
+    'as-suffa': {
+      name: 'As-Suffa Education',
+      desc: [m['as-suffa.desc']]
+    },
+    'hull-mosque': {
+      name: 'Hull Mosque & Islamic Centre',
+      desc: [m['hull-mosque.desc']]
+    }
+  } as const;
 
-	let audioRefs: Record<string, HTMLAudioElement | null> = {};
+  $: mosque = mosqueId
+    ? mosques[mosqueId as keyof typeof mosques]
+    : undefined;
 
-	function seekTo(recId: string, seconds: number | undefined) {
-		const player = audioRefs[recId];
-		if (player && seconds !== undefined) {
-			player.currentTime = seconds;
-			player.play(); // Auto-play when they click a Surah
-		}
-	}
+  const getDateLabel = (dateStr: string) => {
+    const date = new SvelteDate(dateStr);
+    const today = new SvelteDate();
+    const yesterday = new SvelteDate();
+    yesterday.setDate(today.getDate() - 1);
 
-	// Reactive grouping
-	// eslint-disable-next-line svelte/no-immutable-reactive-statements
-	$: groupedRecordings = (recordings ?? [])
-		.sort((a, b) => b.date.localeCompare(a.date))
-		.reduce<Record<string, (typeof recordings)[0][]>>((groups, rec) => {
-			if (!groups[rec.date]) groups[rec.date] = [];
-			groups[rec.date].push(rec);
-			return groups;
-		}, {});
+    const isSameDay = (d1: SvelteDate, d2: SvelteDate) =>
+      d1.toISOString().split('T')[0] ===
+      d2.toISOString().split('T')[0];
+
+    if (isSameDay(date, today)) return 'Tonight';
+    if (isSameDay(date, yesterday)) return 'Yesterday';
+
+    return date.toLocaleDateString('en-GB', {
+      day: '2-digit',
+      month: 'long'
+    });
+  };
+
+  let audioRefs: Record<string, HTMLAudioElement | null> = {};
+
+  function seekTo(recId: string, seconds: number | undefined) {
+    const player = audioRefs[recId];
+    if (player && seconds !== undefined) {
+      // Pause others if playing
+      Object.values(audioRefs).forEach(
+        (p) => p && p !== player && p.pause()
+      );
+      player.currentTime = seconds;
+      player.play();
+      activeRecordingId = recId;
+    }
+  }
+
+  let groupedRecordings: Record<string, Recording[]> = {};
+
+  /* 
+    We ignore this reactive statement for eslint because the linter
+    thinks that nothing in here CAN change, so it throws an error */
+
+  // eslint-disable-next-line svelte/no-immutable-reactive-statements
+  $: {
+    const groups: Record<string, Recording[]> = {};
+
+    for (const rec of recordings) {
+      (groups[rec.date] ??= []).push(rec);
+    }
+
+    groupedRecordings = Object.fromEntries(
+      Object.keys(groups)
+        .sort((a, b) => (a < b ? 1 : -1))
+        .map((date) => [date, groups[date]])
+    );
+  }
 </script>
 
-<div class="settings-card bg-black/50">
-	{#if mosque}
-		<span class="text-lg font-bold">{mosque.name}</span>
-		<br /><br />
-		<!-- ^^ BRR
-		BRuh im crine
-		-->
+<div class="settings-card border border-white/10 shadow-2xl">
+  {#if mosque}
+    <header class="mb-6 border-b border-white/10 pb-4">
+      <h1
+        class="bg-gradient-to-r from-white to-white/60 bg-clip-text text-2xl font-bold text-transparent"
+      >
+        {mosque.name}
+      </h1>
+      <div
+        class="mt-2 space-y-1 text-sm leading-relaxed text-slate-400"
+      >
+        {#each mosque.desc as line (line)}
+          <p>{line()}</p>
+        {/each}
+      </div>
+    </header>
 
-		<div class="text-lg">
-			<!-- eslint-disable-next-line svelte/require-each-key -->
-			{#each mosque.desc as line}
-				<span>{line()}</span><br />
-			{/each}
-		</div>
+    <div
+      class="recording-list custom-scrollbar mt-5 max-h-[60vh] space-y-6 overflow-y-auto pr-2"
+    >
+      {#if Object.keys(groupedRecordings).length > 0}
+        {#each Object.entries(groupedRecordings) as [date, dateGroup], i (i)}
+          <section class="space-y-3">
+            <div class="sticky top-0 z-20 -mx-1 px-1">
+              <div
+                class="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1 backdrop-blur-md"
+              >
+                <h3
+                  class="text-xs font-bold tracking-widest text-emerald-400 uppercase"
+                >
+                  {getDateLabel(date)}
+                </h3>
+              </div>
+            </div>
 
-		<div class="mt-5 max-h-[500px] space-y-4 overflow-y-auto pr-2">
-			{#if Object.keys(groupedRecordings).length > 0}
-				<!-- eslint-disable-next-line svelte/require-each-key -->
-				{#each Object.entries(groupedRecordings) as [date, recordings]}
-					<div class="space-y-3">
-						<!-- DATE HEADER -->
-						<div
-							class="sticky top-0 z-10 rounded-lg border border-white/10 bg-black/80 px-3 py-2 backdrop-blur"
-						>
-							<h3 class="text-sm font-bold text-blue-300">
-								{getDateLabel(date)}
-							</h3>
-						</div>
+            {#each dateGroup as rec (rec.id)}
+              {@const isCollapsed =
+                shouldCollapse(rec) && !expandedRecs.has(rec.id)}
 
-						<!-- RECORDINGS -->
-						{#each recordings as rec (rec.id)}
-							<div
-								class="mb-4 rounded-xl border border-white/20 bg-black/20 p-4 transition-all hover:border-emerald-500/40"
-							>
-								<span
-									class="shrink-0 self-start rounded bg-black/50 px-2 py-1 text-right text-[17px] text-white"
-								>
-									{rec.nickname}
-								</span>
-								<div class="mb-2 flex items-start justify-between">
-									<div class="flex w-full flex-col gap-4">
-										{#each rec.surahs ?? [] as s (s.surah_number)}
-											<button
-												on:click={() => seekTo(rec.id, s.timestamp_start)}
-												class="group flex w-full items-center gap-4 rounded-lg p-2 text-left transition-all hover:bg-white/5"
-											>
-												<div
-													class="flex h-16 w-20 items-center justify-center rounded-lg bg-white/5 text-4xl text-white/50 transition-colors group-hover:text-emerald-400"
-												>
-													<span class="mr-2" style="font-family: 'surahnames', sans-serif;">
-														{formatSurahNumber(s.surah_number)}
-													</span>
-												</div>
+              <div
+                class="group relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.03] p-4 transition-all hover:border-white/20 hover:bg-white/[0.06]"
+              >
+                <div class="mb-4 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="h-2 w-2 rounded-full {activeRecordingId ===
+                      rec.id
+                        ? 'animate-pulse bg-emerald-500'
+                        : 'bg-white/20'}"
+                    ></div>
+                    <span class="font-medium text-white"
+                      >{rec.nickname}</span
+                    >
+                  </div>
 
-												<div class="flex flex-grow flex-col justify-center">
-													<h4
-														class="text-lg font-semibold tracking-wide text-white transition-colors group-hover:text-emerald-400"
-													>
-														{s.surah_name}
-													</h4>
-													<div class="flex items-center gap-2 text-xs font-medium text-slate-400">
-														<span class="text-white-700 tracking-widest"
-															>Surah {s.surah_number}</span
-														>
-														<span class="h-1 w-1 rounded-full bg-slate-700"></span>
-														<span>{s.detected_ayahs} Ayahs</span>
-														{#if s.timestamp_start !== undefined}
-															<span class="h-1 w-1 rounded-full bg-slate-700"></span>
-															<!-- <span class="text-emerald-500/80">Jump to {Math.floor(s.timestamp_start / 60)}:{(s.timestamp_start % 60).toString().padStart(2, '0')}</span> -->
-															<span class="text-emerald-500/80">Jump to Rak'at</span>
-															<!--localize-->
-														{/if}
-													</div>
-												</div>
+                  {#if rec.type === 'taraweeh'}
+                    <span
+                      class="rounded-md border border-indigo-500/30 bg-indigo-500/10 px-2 py-0.5 text-[10px] font-black tracking-tighter text-indigo-300 uppercase"
+                    >
+                      {m['quran.taraweeh']()}
+                    </span>
+                  {/if}
+                </div>
 
-												<div class="pr-4 opacity-0 transition-opacity group-hover:opacity-100">
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														class="h-6 w-6 text-emerald-500"
-														fill="none"
-														viewBox="0 0 24 24"
-														stroke="currentColor"
-													>
-														<path
-															stroke-linecap="round"
-															stroke-linejoin="round"
-															stroke-width="2"
-															d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-														/>
-														<path
-															stroke-linecap="round"
-															stroke-linejoin="round"
-															stroke-width="2"
-															d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-														/>
-													</svg>
-												</div>
-											</button>
-										{/each}
-									</div>
-								</div>
+                <audio
+                  bind:this={audioRefs[rec.id]}
+                  on:play={() => (activeRecordingId = rec.id)}
+                  controls
+                  src={rec.audio_url}
+                  class="mb-4 h-10 w-full opacity-80 transition-opacity hover:opacity-100"
+                ></audio>
 
-								<div class="mt-4">
-									<audio
-										bind:this={audioRefs[rec.id]}
-										controls
-										src={rec.audio_url}
-										class="h-10 w-full accent-black/20"
-									></audio>
-								</div>
-							</div>
-						{/each}
-					</div>
-				{/each}
-			{:else}
-				<p class="py-10 text-center text-sm text-slate-500 italic">{m['errors.no_recordings']()}</p>
-			{/if}
+                {#if shouldCollapse(rec)}
+                  <button
+                    on:click={() => toggleDetails(rec.id)}
+                    class="flex w-full items-center justify-between rounded-xl bg-white/5 px-4 py-2.5 text-xs font-semibold text-slate-300 hover:bg-white/10"
+                  >
+                    <span
+                      >{isCollapsed
+                        ? 'View Breakdown'
+                        : 'Hide Breakdown'}</span
+                    >
+                    <span class="text-slate-500"
+                      >{rec.surahs?.length || 0} tracks</span
+                    >
+                  </button>
+                {/if}
 
-			<footer class="mt-6 text-center text-xs text-slate-600">
-				{m['mosques.ai_warning']()}
-			</footer>
-		</div>
-	{:else}
-		<p class="text-lg opacity-70">Mosque not found</p>
-		<!--TODO: localize ts-->
-	{/if}
+                {#if !isCollapsed}
+                  <div
+                    transition:slide={{ duration: 300 }}
+                    class="mt-3 grid gap-2"
+                  >
+                    {#each rec.surahs ?? [] as s, i (i)}
+                      <button
+                        on:click={() =>
+                          seekTo(rec.id, s.timestamp_start)}
+                        class="group/item flex items-center gap-4 rounded-xl p-2 transition-all hover:bg-emerald-500/10"
+                      >
+                        <div
+                          class="font-surah flex h-10 items-center justify-center rounded-lg bg-black/40 pr-2 text-2xl text-white/40 group-hover/item:text-emerald-400"
+                        >
+                          {s.surah_number
+                            .toString()
+                            .padStart(3, '0')}
+                        </div>
+
+                        <div class="flex-grow text-left">
+                          <div
+                            class="text-sm font-bold text-slate-200 group-hover/item:text-white"
+                          >
+                            {s.surah_name}
+                          </div>
+                          <div
+                            class="flex items-center gap-2 text-[10px] text-slate-500"
+                          >
+                            {#if s.rakat_number}
+                              <span class="text-emerald-500/60"
+                                >Rak'at {s.rakat_number}</span
+                              >
+                              <span>•</span>
+                            {/if}
+                            <span>{s.detected_ayahs || 0} Ayahs</span
+                            >
+                          </div>
+                        </div>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-4 w-4 text-emerald-500 opacity-0 group-hover/item:opacity-100"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                          />
+                        </svg>
+                      </button>
+                    {/each}
+                  </div>
+                {/if}
+              </div>
+            {/each}
+          </section>
+        {/each}
+      {:else}
+        <div
+          class="flex flex-col items-center justify-center py-20 text-slate-500"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mb-4 h-12 w-12 opacity-20"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+            />
+          </svg>
+          <p class="text-sm italic">{m['errors.no_recordings']()}</p>
+        </div>
+      {/if}
+
+      <footer
+        class="mt-8 border-t border-white/5 pt-6 pb-4 text-center text-[10px] tracking-widest text-slate-600 uppercase"
+      >
+        {m['mosques.ai_warning']()}
+      </footer>
+    </div>
+  {:else}
+    <div
+      class="flex h-64 flex-col items-center justify-center space-y-4"
+    >
+      <p class="text-lg font-medium text-slate-400">
+        Mosque not found
+      </p>
+      <button class="text-sm text-emerald-500 underline"
+        >Return Home</button
+      >
+    </div>
+  {/if}
 </div>
 
 <style>
-	.settings-card {
-		position: absolute;
-		top: 5vh;
-		left: 16px;
-		right: 16px;
+  .settings-card {
+    position: absolute;
+    top: 5vh;
+    left: 16px;
+    right: 16px;
+    background: linear-gradient(
+      135deg,
+      rgba(15, 15, 15, 0.8),
+      rgba(0, 0, 0, 0.9)
+    );
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 24px;
+  }
 
-		backdrop-filter: blur(12px);
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
 
-		border-radius: 14px;
-		padding: 16px;
+  .font-surah {
+    font-family: 'surahnames', sans-serif;
+  }
 
-		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-	}
-
-	@font-face {
-		font-family: 'surahnames';
-		/* Use relative paths to your lib folder */
-		src:
-			url('$lib/assets/fonts/quran/surah-names/sura_names.woff2') format('woff2'),
-			url('$lib/assets/fonts/quran/surah-names/sura_names.woff') format('woff');
-		font-weight: normal;
-		font-style: normal;
-		font-display: swap;
-	}
+  @font-face {
+    font-family: 'surahnames';
+    src: url('$lib/assets/fonts/quran/surah-names/sura_names.woff2')
+      format('woff2');
+    font-display: swap;
+  }
 </style>
