@@ -280,7 +280,7 @@
     color: white;
 
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch; 
+    -webkit-overflow-scrolling: touch;
 
     padding-top: calc(40px + env(safe-area-inset-top));
     padding-bottom: 40px;
@@ -289,12 +289,12 @@
   }
 
   :global(html) {
-  height: 100%;
-}
+    height: 100%;
+  }
 
-:global(body) {
-  /* This allows the content to actually touch the bottom edge */
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
-}
+  :global(body) {
+    /* This allows the content to actually touch the bottom edge */
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
 </style>

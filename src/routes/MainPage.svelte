@@ -2,7 +2,6 @@
   import DropDownMenu from './DropDownMenu.svelte';
   import * as m from '$lib/paraglide/messages.js';
   import { localizeHref } from '$lib/paraglide/runtime';
-  import { goto } from '$app/navigation';
 
   let active = $state('mosque');
 
@@ -30,9 +29,6 @@
   let loading = $state(false);
 </script>
 
-
-
-
 {#if loading}
   <div class="loading-overlay">
     <div class="spinner"></div>
@@ -46,10 +42,13 @@
       class="mosque-list settings-card"
       data-sveltekit-preload-data="hover"
     >
-      {#each mosques as mosque}
-        <a
-          href={localizeHref(`/mosque?m=${mosque.slug}`)}
-          on:click={() => loading = true}
+      {#each mosques as mosque, i (i)}
+        <!-- website is hosted under / so no need for resolve
+        see https://svelte.dev/docs/kit/%24app-paths#resolve 
+        for details-->
+        <!--eslint-disable-next-line svelte/no-navigation-without-resolve-->
+        <a href={localizeHref(`/mosque?m=${mosque.slug}`)}
+          on:click={() => (loading = true)} 
           class="mosque border border-white/5 bg-white/[0.03]"
           id={mosque.id}
           data-sveltekit-noscroll
@@ -274,29 +273,28 @@
   }
 
   .loading-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(6px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
-
-.spinner {
-  width: 42px;
-  height: 42px;
-  border: 3px solid rgba(255, 255, 255, 0.2);
-  border-top-color: white;
-  border-radius: 50%;
-  animation: spin 0.9s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
   }
-}
 
+  .spinner {
+    width: 42px;
+    height: 42px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 </style>
