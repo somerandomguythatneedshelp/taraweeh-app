@@ -1,63 +1,65 @@
 <script lang="ts">
   import DropDownMenu from './DropDownMenu.svelte';
   import * as m from '$lib/paraglide/messages.js';
+  import { localizeHref } from '$lib/paraglide/runtime';
   import { goto } from '$app/navigation';
 
-  let active = 'mosque';
+  let active = $state('mosque');
+
+  const mosques = [
+    {
+      id: 'brough-mosque',
+      title: 'East Riding Community Foundation Centre',
+      address: 'Welton craft, 6 Common Ln, Welton, Brough HU15 1PT',
+      slug: 'brough-mosque'
+    },
+    {
+      id: 'as-suffa',
+      title: 'As-Suffa Education',
+      address: 'As Suffa Education, Walker St, Hull HU3 2HD',
+      slug: 'as-suffa'
+    },
+    {
+      id: 'hull-mosque',
+      title: 'Hull Mosque & Islamic Centre',
+      address: '2 Berkeley St, Hull HU3 1PR',
+      slug: 'hull-mosque'
+    }
+  ];
+
+  let loading = $state(false);
 </script>
+
+
+
+
+{#if loading}
+  <div class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+{/if}
 
 <!-- Acutal page content -->
 {#if active == 'mosque'}
   <div>
     <div
-      class="mosque-list bg-black/30"
+      class="mosque-list settings-card"
       data-sveltekit-preload-data="hover"
     >
-      <!-- a list containing all of the mosques/masjids -->
-
-      <!--The reason for these indivdial comments disabling
-			    eslint errors is because this url is static and doesn't
-				change so resolve is not needed -->
-
-      <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-      <button on:click={() => goto('/mosque?m=brough-mosque')}
-        class="mosque bg-black/50"
-        id="brough-mosque"
-        data-sveltekit-noscroll
-      >
-        <span class="mosque-title"
-          >East Riding Community Foundation Centre</span
+      {#each mosques as mosque}
+        <a
+          href={localizeHref(`/mosque?m=${mosque.slug}`)}
+          on:click={() => loading = true}
+          class="mosque border border-white/5 bg-white/[0.03]"
+          id={mosque.id}
+          data-sveltekit-noscroll
+          data-sveltekit-preload-data="tap"
         >
-        <br />
-        <span class="mosque-address"
-          >Welton craft, 6 Common Ln, Welton, Brough HU15 1PT</span
-        >
-      </button>
-      <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-      <button on:click={() => goto('/mosque?m=as-suffa')}
-        class="mosque bg-black/50"
-        id="as-suffa"
-        data-sveltekit-noscroll
-      >
-        <span class="mosque-title">As-Suffa Education</span>
-        <br />
-        <span class="mosque-address"
-          >As Suffa Education, Walker St, Hull HU3 2HD</span
-        >
-      </button>
-      <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-      <button on:click={() => goto('/mosque?m=hull-mosque')}
-        class="mosque bg-black/50"
-        id="hull-mosque"
-        data-sveltekit-noscroll
-      >
-        <span class="mosque-title">Hull Mosque & Islamic Centre</span
-        >
-        <br />
-        <span class="mosque-address"
-          >2 Berkeley St, Hull HU3 1PR</span
-        >
-      </button>
+          <span class="mosque-title">{mosque.title}</span>
+          <br />
+          <span class="mosque-address">{mosque.address}</span>
+        </a>
+      {/each}
     </div>
   </div>
 {:else}
@@ -65,7 +67,7 @@
 {/if}
 
 <!-- Bottom Nav Bar -->
-<div class="bottom-nav bg-white/20">
+<div class="bottom-nav border border-white/5 bg-white/[0.03]">
   <button
     class="nav-item {active === 'mosque' ? 'active' : ''}"
     on:click={() => (active = 'mosque')}
@@ -119,10 +121,30 @@
 </div>
 
 <style>
-  /* Floating pill container */
+  :global(html),
+  :global(body) {
+    height: 100%; /* Important for percentage heights to work */
+    overflow: hidden; /* Prevents the whole body from scrolling if you want app-like feel */
+  }
+
+  .settings-card {
+    position: relative;
+    margin-top: 5vh;
+    margin-left: 16px;
+    margin-right: 16px;
+    background: linear-gradient(
+      135deg,
+      rgba(15, 15, 15, 0.8),
+      rgba(0, 0, 0, 0.9)
+    );
+
+    border-radius: 24px;
+    padding: 24px;
+  }
+
   .bottom-nav {
     position: fixed;
-    bottom: 20px; /* floating above bottom edge */
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -137,7 +159,6 @@
     padding: 0 10px;
   }
 
-  /* Each button inside the nav */
   .nav-item {
     position: relative;
     display: flex;
@@ -160,7 +181,6 @@
     transition: transform 0.3s;
   }
 
-  /* Active state */
   .nav-item.active {
     color: #000;
   }
@@ -169,7 +189,6 @@
     transform: translateY(-4px) scale(1.2);
   }
 
-  /* Active indicator (little pill under icon) */
   .indicator {
     position: absolute;
     bottom: -7px;
@@ -197,29 +216,49 @@
   }
 
   .mosque-list {
-    position: fixed;
+    position: relative;
     border-radius: 14px;
     padding: 16px;
-    top: 5vh;
-    width: 90vw;
-    transform: translateX(-50%);
-    height: 75vh;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    z-index: 100;
-    margin: 0 auto;
+    width: 100%;
+    height: 70vh;
+    box-sizing: border-box;
     display: flex;
-    flex-direction: column; /* stack mosque items vertically */
-    gap: 12px; /* spacing between items */
-    overflow: auto; /* scroll if contents exceed 75vh */
+    flex-direction: column;
+    gap: 12px;
+    overflow: auto;
+    margin: 0 auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .mosque {
-    position: static; /* regular flow inside .mosque-list */
+    display: block; /* Links are inline by default, we need block */
+    text-decoration: none; /* Remove underlines */
+    color: inherit; /* Don't turn the text blue */
+    position: relative;
     width: 100%;
-    max-width: none;
     border-radius: 12px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-    padding: 10px;
+    padding: 14px; /* Slightly more padding for easier tapping */
+    box-sizing: border-box;
+
+    /* Mobile Polish */
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+      transform 0.1s ease,
+      background-color 0.2s ease;
+  }
+
+  /* Add a "pressed" feel since it's an app */
+  .mosque:active {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(0.98);
+  }
+
+  .mosque-title,
+  .mosque-address {
+    pointer-events: none;
+    display: block; /* Ensure they wrap correctly */
   }
 
   .mosque-title {
@@ -233,4 +272,31 @@
     font-style: italic;
     color: gray;
   }
+
+  .loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.spinner {
+  width: 42px;
+  height: 42px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 </style>

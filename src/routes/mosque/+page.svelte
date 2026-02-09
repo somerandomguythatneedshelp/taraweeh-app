@@ -9,7 +9,6 @@
   import SurahInfo from '../../components/SurahInfo.svelte';
   import { goto } from '$app/navigation';
 
-  // Types to stop the headaches
   interface Surah {
     surah_number: number;
     surah_name: string;
@@ -294,12 +293,13 @@
                           title=""
                           on:click={() => {
                             surahId.set(s.surah_number);
-                            // im ignoring eslint here because i would rather
-                            // fuck a donkey than figure out why eslint is flagging
-                            // this and furthermore, why actually using resolve from
-                            // 'path' still doesnt work and throws a 500 internal error
+                            // ignore eslint here because resolve throws
+                            // an internal 500 error for some reason,
+                            // even though the navigation works perfectly fine
                             // eslint-disable-next-line svelte/no-navigation-without-resolve
-                            goto(`/mosque?m=${mosqueId}&s=${s.surah_number}`);
+                            goto(
+                              `/mosque?m=${mosqueId}&s=${s.surah_number}`
+                            );
                           }}
                         >
                           <svg

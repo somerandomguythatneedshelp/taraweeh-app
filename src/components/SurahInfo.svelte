@@ -12,7 +12,7 @@
   };
 
   // surah_number being a string is intentional
-  // because paraglide will shit itself if it 
+  // because paraglide will shit itself if it
   // finds one number thats not in quotes
 
   const mm = m as unknown as MessagesMap;
@@ -40,6 +40,7 @@
         {mm[`s${$surahId}.surah_name`]()}
       </h1>
       <p class="mt-4 text-sm text-slate-500 italic">
+        <!-- i should probably localize this -->
         Note: Information is currently available in English only.
       </p>
     </header>

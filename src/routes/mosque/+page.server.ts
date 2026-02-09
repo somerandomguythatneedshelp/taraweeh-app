@@ -49,8 +49,8 @@ export async function load({ url }) {
         let metadata: any = {
           surahs: [
             {
-              surah_name: 'AI Processing...',
-              short_description: 'Identifying recitation...',
+              surah_name: '...',
+              short_description: '...',
               detected_ayahs: '...',
               surah_number: 0
             }

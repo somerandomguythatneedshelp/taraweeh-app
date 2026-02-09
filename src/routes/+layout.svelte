@@ -37,6 +37,12 @@
 
   const backgroundClass = $derived(timeDescription);
 
+  $effect(() => {
+    // removes previous class and applies
+    // a new one
+    document.body.className = backgroundClass;
+  });
+
   let fontStyle = $state(
     getLocale() == 'ar' ||
       getLocale() == 'arz' ||
@@ -107,13 +113,14 @@
   <link rel="apple-touch-icon" href={favicon92x92} />
 </svelte:head>
 
-{#if timeDescription === 'sunlight'}
-  <div class="sun-glow"></div>
-{/if}
-
-<div class="background app-container {fontStyle} {backgroundClass}">
+<div class="fixed-wallpaper {backgroundClass}">
   <div class="stars-layer"></div>
-  <!-- twinkles here -->
+  {#if timeDescription === 'sunlight'}
+    <div class="sun-glow"></div>
+  {/if}
+</div>
+
+<div class="content-scroller {fontStyle}">
   {@render children()}
 </div>
 
@@ -181,250 +188,71 @@
     height: 100%;
   }
 
-  .stars-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
+  :global(html),
+  :global(body) {
+    margin: 0;
+    padding: 0;
     width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    background-image:
-      radial-gradient(
-        1px 1px at 25px 5px,
-        white,
-        rgba(255, 255, 255, 0)
-      ),
-      radial-gradient(
-        1px 1px at 50px 25px,
-        white,
-        rgba(255, 255, 255, 0)
-      );
-  }
-
-  .sun-glow {
+    overflow: hidden; /* Keeps the app locked */
     position: fixed;
-    bottom: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 200px;
+    height: 100%;
+    /* This prevents the white 'flash' during navigation */
+    transition: background-color 0.8s ease-in-out;
+  }
+
+  /* GLOBAL THEME COLORS 
+     These target the <body> tag to fix the safe area 'white bar'
+  */
+  :global(body.sunlight) {
+    background-color: #8c92ac;
+  } /* Match bottom color */
+  :global(body.sunset) {
+    background-color: #0d0d1f;
+  }
+  :global(body.golden_hour) {
+    background-color: #ff9a42;
+  }
+  :global(body.night) {
+    background-color: #12122b;
+  }
+  :global(body.twilight) {
+    background-color: #83664a;
+  }
+  :global(body.sunrise) {
+    background-color: #697b9c;
+  }
+
+  /* FIXED WALLPAPER
+     This layer covers the viewport and provides the gradient.
+  */
+  .fixed-wallpaper {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
     pointer-events: none;
-    z-index: 0;
+    overflow: hidden;
   }
 
-  .app-container {
-    position: relative;
-    z-index: 1;
-    padding: 40px 20px;
-    margin: 0 auto;
-  }
-
+  /* Gradients */
   .sunlight {
     background: linear-gradient(#8c92ac, lightblue);
   }
-
   .sunset {
-    margin: 0;
-    min-height: 100vh;
-    background-color: #0d0d1f;
     background: linear-gradient(
       180deg,
       #1b1b3a 0%,
       #12122b 50%,
       #0d0d1f 100%
     );
-    font-family:
-      system-ui,
-      -apple-system,
-      sans-serif;
-    color: white;
-    overflow-x: hidden;
-    position: relative;
   }
-
-  .sunset::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background-image:
-      radial-gradient(
-        1px 1px at 25px 5px,
-        white,
-        rgba(255, 255, 255, 0)
-      ),
-      radial-gradient(
-        1px 1px at 50px 25px,
-        white,
-        rgba(255, 255, 255, 0)
-      ),
-      radial-gradient(
-        1px 1px at 125px 20px,
-        white,
-        rgba(255, 255, 255, 0)
-      ),
-      radial-gradient(
-        1.5px 1.5px at 200px 100px,
-        #ddd,
-        rgba(255, 255, 255, 0)
-      ),
-      radial-gradient(
-        1px 1px at 20px 200px,
-        #ccc,
-        rgba(255, 255, 255, 0)
-      ),
-      radial-gradient(
-        1px 1px at 100px 250px,
-        white,
-        rgba(255, 255, 255, 0)
-      );
-
-    background-size: 550px 550px;
-    opacity: 0.3;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .sunset::after {
-    background-image:
-      radial-gradient(
-        1px 1px at 75px 125px,
-        white,
-        rgba(255, 255, 255, 0)
-      ),
-      radial-gradient(
-        1px 1px at 100px 50px,
-        white,
-        rgba(255, 255, 255, 0)
-      ),
-      radial-gradient(
-        1.5px 1.5px at 300px 200px,
-        white,
-        rgba(255, 255, 255, 0)
-      ),
-      radial-gradient(
-        1px 1px at 10px 10px,
-        white,
-        rgba(255, 255, 255, 0)
-      );
-    animation: twinkle 4s infinite ease-in-out;
-  }
-
-  @keyframes twinkle {
-    0% {
-      opacity: 0.2;
-    }
-    50% {
-      opacity: 0.8;
-    }
-    100% {
-      opacity: 0.2;
-    }
-  }
-
   .golden_hour {
-    background-color: #ffb347;
     background: linear-gradient(
       180deg,
       #2b102f 0%,
       #7d3450 50%,
       #ff9a42 100%
     );
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
-
-  .golden_hour::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background-image:
-      radial-gradient(
-        1px 1px at 25px 5px,
-        white,
-        rgba(255, 255, 255, 0)
-      ),
-      radial-gradient(
-        1px 1px at 50px 25px,
-        white,
-        rgba(255, 255, 255, 0)
-      ),
-      radial-gradient(
-        1px 1px at 125px 20px,
-        white,
-        rgba(255, 255, 255, 0)
-      ),
-      radial-gradient(
-        1.5px 1.5px at 200px 100px,
-        #ffeebb,
-        rgba(255, 255, 255, 0)
-      ),
-      radial-gradient(
-        1px 1px at 20px 200px,
-        #ffddee,
-        rgba(255, 255, 255, 0)
-      ),
-      radial-gradient(
-        1px 1px at 100px 250px,
-        white,
-        rgba(255, 255, 255, 0)
-      );
-
-    opacity: 0.25;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .golden_hour::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background-image:
-      radial-gradient(
-        1px 1px at 75px 125px,
-        white,
-        rgba(255, 255, 255, 0)
-      ),
-      radial-gradient(
-        1px 1px at 100px 50px,
-        white,
-        rgba(255, 255, 255, 0)
-      ),
-      radial-gradient(
-        1.5px 1.5px at 300px 200px,
-        #fff5d7,
-        rgba(255, 255, 255, 0)
-      );
-
-    background-size: 400px 400px;
-    animation: twinkle 5s infinite ease-in-out;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  @keyframes twinkle {
-    0% {
-      opacity: 0.1;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      opacity: 0.1;
-    }
-  }
-
   .night {
     background:
       radial-gradient(
@@ -433,13 +261,40 @@
         transparent 50%
       ),
       linear-gradient(180deg, #12122b 0%, #1c1c3d 100%);
-    background-color: #12122b;
   }
 
-  .twilight {
-    background: linear-gradient(#697b9c, #83664a);
+  /* CONTENT SCROLLER
+     Handles Safe Area Insets for iOS.
+  */
+  .content-scroller {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+
+    min-height: 100svh;
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; 
+
+    padding-top: calc(40px + env(safe-area-inset-top));
+    padding-bottom: 40px;
+    padding-left: calc(20px + env(safe-area-inset-left));
+    padding-right: calc(20px + env(safe-area-inset-right));
   }
-  .sunrise {
-    background: linear-gradient(#83664a, #697b9c);
-  }
+
+  :global(html) {
+  height: 100%;
+}
+
+:global(body) {
+  /* This allows the content to actually touch the bottom edge */
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
 </style>
