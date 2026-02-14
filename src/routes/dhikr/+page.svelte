@@ -1,6 +1,7 @@
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
   import Dhikr from '$lib/dhikr';
+  import ShareButton from '../../components/ShareButton.svelte';
 
   const dhikr = [
     { id: 'dhikr.morning' },
@@ -39,6 +40,7 @@
       <div class="details-container">
         {#each Object.entries(selectedDhikr) as [key, value], i (i)}
           <div class="dhikr-detail-item">
+            <ShareButton></ShareButton>
             <p class="detail-label">
               {messages[key] ? messages[key]() : key}
             </p>
