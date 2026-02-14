@@ -31,6 +31,70 @@
     "view_surahs": "View Surahs",
     "hide_surahs": "Hide Surahs"
   },
+  "dhikr": {
+    "dhikr": "Dhikr",
+    "morning": "Morning Dhikr",
+    "evening": "Evening Dhikr",
+    "eating": "Eating Dhikr",
+    "postprayer": "After-Prayer Dhikr",
+
+    
+
+    "morningdua": "Start of the Morning",
+    "goodday": "Asking Allah for a Good Day",
+    "blessedday": "Asking Allah for a Blessed Day",
+    "enteringmorning": "Upon Entering the Morning",
+
+    "renewingtawhid": "Renewing Tawhid",
+    "enteringevening": "Upon Entering the Evening",
+    "goodevening": "Asking Allah for a Good Evening",
+    "blessedevening": "Asking Allah for a Blessed Evening",
+
+    "beforebreakingfast": "Before Breaking Fast #1",
+    "beforebreakingfast1": "Before Breaking Fast #2",
+    "foronewhogivesfood": "Supplication for Somebody Who Gives One Food or Drink",
+    "beforeeating": "Before Eating #1",
+    "beforeeating1": "Before Eating #2",
+    "aftereating": "After Eating #1",
+    "aftereating1": "After Eating #2",
+
+    "postprayer1": "After Prayer #1",
+    "postprayer2": "After Prayer #2",
+    "postprayer3": "After Prayer #3",
+    "postprayer4": "After Prayer #4",
+    "afterfajrandmaghrib": "After Fajr and Maghrib #1",
+    "afterfajrandmaghrib1": "After Fajr and Maghrib #2",
+    "afterfajr": "After Fajr",
+    "afterwitr": "After Witr",
+
+
+    "morningduatranslation": "I have entered the morning praising You, and I bear witness that there is no god worthy of worship but Allah.",
+    "gooddaytranslation": "We have entered the morning and at this very time the whole kingdom belongs to Allah. All praise is due to Allah. There is no god worthy of worship except Allah, the One; He has no partner with Him. The entire kingdom belongs solely to Him, to Him is all praise due, and He is All-Powerful over everything. My Lord, I ask You for the good that is in this day and the good that follows it, and I seek Your protection from the evil that is in this day and from the evil that follows it. My Lord, I seek Your protection from laziness and the misery of old age. My Lord, I seek Your protection from the torment of the Hell-fire and the punishment of the grave.",
+    "blesseddaytranslation": "We have entered the morning and at this very time the whole kingdom belongs to Allah, Lord of the Worlds. O Allah, I ask You for the goodness of this day: its victory, its help, its light, and its blessings and guidance. I seek Your protection from the evil that is in it and from the evil that follows it.",
+    "enteringmorningtranslation": "O Allah, by You we have entered the morning and by You we enter upon the evening. By You, we live and we die, and to You is the resurrection.",
+
+    "renewingtawhidtranslation": "We have entered the evening upon the natural religion of Islam, the statement of pure faith (i.e. Shahādah), the religion of our Prophet Muhammad ﷺ and upon the way of our father Ibrāhīm, who turned away from all that is false, having surrendered to Allah, and he was not of the polytheists. (Nasā'ī)",
+    "enteringeveningtranslation": "I have entered the evening praising You, and I bear witness that there is no god worthy of worship but Allah.",
+    "goodeveningtranslation": "We have entered the evening and at this very time the whole kingdom belongs to Allah. All praise is due to Allah. There is no god worthy of worship except Allah, the One; He has no partner with Him. The entire kingdom belongs solely to Him, to Him is all praise due, and He is All-Powerful over everything. My Lord, I ask You for the good that is in this night and the good that follows it, and I seek Your protection from the evil that is in this night and from the evil that follows it. My Lord, I seek Your protection from laziness and the misery of old age. My Lord, I seek Your protection from the torment of the Hell-fire and the punishment of the grave.",
+    "blessedeveningtranslation": "We have entered the evening and at this very time the whole kingdom belongs to Allah, Lord of the Worlds. O Allah, I ask You for the goodness of this day/night: its victory, its help, its light, and its blessings and guidance. I seek Your protection from the evil that is in it and from the evil that follows it.",
+  
+    "afterbreakingfasttranslation": "O Allah, for You I have fasted, and with Your provision I have broken my fast.",
+    "afterbreakingfast1translation1": "The thirst has gone, the veins have been moistened, and the reward has been secured, if Allah wills.",
+    "foronewhogivesfoodtranslation": "O Allah, feed the one who has fed me and give to drink the one who has given me to drink.",
+    "beforeeatingtranslation": "In the name of Allah.",
+    "beforeeating1translation": "O Allah, bless us in it and feed us that which is better than it.",
+    "aftereatingtranslation": "Praise be to Allah who has fed me this and provided me with it without any power and might from me.",
+    "aftereating1translation": "Allah be praised with an abundant beautiful blessed praise, a never-ending praise, a praise which we will never bid farewell to and an indispensable praise, our Lord.",
+  
+    "postprayer1translation": "I seek the forgiveness of Allah",
+    "postprayer2translation": "O Allah, You are The Flawless and The Source of Peace, and from You comes peace. Blessed are You, full of Majesty and Honour.",
+    "postprayer3translation": "There is no god but Allah. He is Alone and He has no partner whatsoever. To Him Alone belong all sovereignty and all praise. He is over all things All-Powerful. O Allah, there is none who can withhold what You give, and none can give what You withhold; and the wealth of the wealthy does not avail them against You.",
+    "postprayer4translation": "There is no god worthy of worship but Allah. He is Alone and He has no partner whatsoever. To Him Alone belong all sovereignty and all praise. He is over all things All-Powerful. There is no power (in averting evil) or strength (in attaining good) except through Allah. There is no god worthy of worship but Allah, and we worship Him Alone. To Him Alone belong grace, bounteousness and noble praise. There is no god worthy of worship but Allah. We sincerely devote our religion for Him, even though the disbelievers may dislike it.",
+    "afterfajrandmaghribtranslation": "There is no god but Allah. He is Alone and He has no partner whatsoever. To Him Alone belong all sovereignty and all praise. He gives life and He gives death. He is over all things All-Powerful.",
+    "afterfajrandmaghrib1translation": "O Allah, protect me from the Hell-fire.",
+    "afterfajrtranslation": "O Allah, I ask You for beneficial knowledge, wholesome sustenance, and deeds which are accepted.",
+    "afterwitrtranslation": "How perfect is the Sovereign, the Most Holy."
+  },
   "s1": {
     "surah_number": "1",
     "surah_name": "Al-Fatihah",

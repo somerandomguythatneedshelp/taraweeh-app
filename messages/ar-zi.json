@@ -23,6 +23,13 @@
   "hull-mosque": {
     "desc": "\"Hull Mosque & Islamic Centre\" howa far3 men el-b3tha el-islameya el-britanya, we et2asas fe Hull 3am 1984. Men thalik el-7een, yekhdem el-mogtama3 be2eso el-markaz el-ra2eesi lel-mogtama3 el-muslim fe Hull. We ya3d Masjed Hull mawred da3m we tawjeeh lel-mogtama3 be2oso, we kan 3ala mor el-sneen noqtet el-ette9al el-awla le-3adeed men el-wafedeen el-godod lel-madina men el-mohajereen wel-la2e2een."
   },
+  "dhikr": {
+    "dhikr": "Dhikr",
+    "morning": "Azkar El Sabah",
+    "evening": "Azkar El Masa2",
+    "eating": "Azkar El Ta3am",
+    "postprayer": "Azkar Ba3d El Salah"
+  },
   "quran": {
     "taraweeh": "Etarawi7",
     "surahs": "Sora",

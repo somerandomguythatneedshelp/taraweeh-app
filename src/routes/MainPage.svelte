@@ -1,6 +1,7 @@
 <script lang="ts">
   import DropDownMenu from './DropDownMenu.svelte';
   import * as m from '$lib/paraglide/messages.js';
+  import DhikrPage from './dhikr/+page.svelte';
   import { localizeHref } from '$lib/paraglide/runtime';
 
   let active = $state('mosque');
@@ -47,8 +48,9 @@
         see https://svelte.dev/docs/kit/%24app-paths#resolve 
         for details-->
         <!--eslint-disable-next-line svelte/no-navigation-without-resolve-->
-        <a href={localizeHref(`/mosque?m=${mosque.slug}`)}
-          on:click={() => (loading = true)} 
+        <a
+          href={localizeHref(`/mosque?m=${mosque.slug}`)}
+          on:click={() => (loading = true)}
           class="mosque border border-white/5 bg-white/[0.03]"
           id={mosque.id}
           data-sveltekit-noscroll
@@ -61,6 +63,8 @@
       {/each}
     </div>
   </div>
+{:else if active == 'dhikr'}
+  <DhikrPage></DhikrPage>
 {:else}
   <DropDownMenu></DropDownMenu>
 {/if}
@@ -92,6 +96,32 @@
     </svg>
     <span>{m['mosques.mosque']()}</span>
     <span class="indicator"></span>
+  </button>
+
+  <button
+    class="nav-item {active === 'dhikr' ? 'active' : ''}"
+    on:click={() => (active = 'dhikr')}
+  >
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <text
+        x="12"
+        y="19"
+        text-anchor="middle"
+        font-size="21"
+        fill="currentColor"
+        font-family="serif"
+        direction="rtl"
+        unicode-bidi="bidi-override"
+      >
+        الله
+      </text>
+    </svg>
+    <span>{m['dhikr.dhikr']()}</span>
   </button>
 
   <button

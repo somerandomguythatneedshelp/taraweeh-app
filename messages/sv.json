@@ -23,6 +23,13 @@
   "hull-mosque": {
     "desc": "\"Hull Mosque & Islamic Centre\" är en gren av UK Islamic Mission och grundades i Hull 1984. Sedan dess har den fungerat som den viktigaste samlingspunkten för den muslimska gemenskapen i Hull.  Hull Mosque är en källa till stöd och vägledning för hela gemenskapen och har genom åren varit den första kontaktpunkten för många nyanlända till staden, från migranter till flyktingar."
   },
+  "dhikr": {
+    "dhikr": "Minnesstund",
+    "morning": "Morgonminnesstund",
+    "evening": "Kvällsminnesstund",
+    "eating": "Minnesstund före måltiden",
+    "postprayer": "Minnesstund efter bönen"
+  },
   "quran": {
     "taraweeh": "Taraweeh",
     "surahs": "Sura",

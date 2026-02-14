@@ -297,7 +297,9 @@
                             // an internal 500 error for some reason,
                             // even though the navigation works perfectly fine
                             // eslint-disable-next-line svelte/no-navigation-without-resolve
-                            goto(`/mosque?m=${mosqueId}&s=${s.surah_number}`);
+                            goto(
+                              `/mosque?m=${mosqueId}&s=${s.surah_number}`
+                            );
                           }}
                         >
                           <svg
