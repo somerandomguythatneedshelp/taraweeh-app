@@ -24,6 +24,12 @@
       title: 'Hull Mosque & Islamic Centre',
       address: '2 Berkeley St, Hull HU3 1PR',
       slug: 'hull-mosque'
+    },
+    {
+      id: 'hull-jame-masjid',
+      title: 'Hull Jame Masjid',
+      address: '20 Pearson Park, Hull, HU5 2TD',
+      slug: 'hull-jame-masjid'
     }
   ];
 
@@ -70,7 +76,7 @@
 {/if}
 
 <!-- Bottom Nav Bar -->
-<div class="bottom-nav border border-white/5 bg-white/[0.03]">
+<div class="bottom-nav border border-white/5 bg-black/50">
   <button
     class="nav-item {active === 'mosque' ? 'active' : ''}"
     on:click={() => (active = 'mosque')}
@@ -112,7 +118,7 @@
         x="12"
         y="19"
         text-anchor="middle"
-        font-size="21"
+        font-size="21" 
         fill="currentColor"
         font-family="serif"
         direction="rtl"
@@ -183,7 +189,7 @@
     max-width: 400px;
     height: 70px;
     border-radius: 35px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     z-index: 100;
     padding: 0 10px;
   }
@@ -194,7 +200,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #888;
+    color: #747272;
     background: none;
     border: none;
     flex: 1;
@@ -211,7 +217,7 @@
   }
 
   .nav-item.active {
-    color: #000;
+    color: #fff;
   }
 
   .nav-item.active svg {
@@ -224,7 +230,6 @@
     width: 25px;
     height: 6px;
     border-radius: 50%;
-    background-color: #000;
     opacity: 0;
     transition:
       opacity 0.3s,

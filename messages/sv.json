@@ -9,6 +9,7 @@
   },
   "mosques": {
     "mosque": "Moské",
+    "goback": "Tillbaka",
     "ai_warning": "Suraerna identifieras med hjälp av artificiell intelligens. Resultaten är inte alltid korrekta."
   },
   "ercf": {
@@ -23,12 +24,69 @@
   "hull-mosque": {
     "desc": "\"Hull Mosque & Islamic Centre\" är en gren av UK Islamic Mission och grundades i Hull 1984. Sedan dess har den fungerat som den viktigaste samlingspunkten för den muslimska gemenskapen i Hull.  Hull Mosque är en källa till stöd och vägledning för hela gemenskapen och har genom åren varit den första kontaktpunkten för många nyanlända till staden, från migranter till flyktingar."
   },
+  "hull-jame-masjid": {
+    "desc": "Grundad 1987 har \"Hull Jame Masjid\" varit en hörnsten i Hulls samhälle i över 35 år. Vi är mer än bara en plats för dyrkan; vi är ett dedikerat samhällscentrum som erbjuder ett brett utbud av tjänster för att stödja och stärka våra grannar. Gå med oss idag i vårt uppdrag att göra en bestående skillnad."
+  },
   "dhikr": {
     "dhikr": "Minnesstund",
     "morning": "Morgonminnesstund",
     "evening": "Kvällsminnesstund",
     "eating": "Minnesstund före måltiden",
-    "postprayer": "Minnesstund efter bönen"
+    "postprayer": "Minnesstund efter bönen",
+
+    "morningdua": "Morgonens åkallan",
+    "goodday": "Bön om en god dag",
+    "blessedday": "Bön om en välsignad dag",
+    "enteringmorning": "Vid inträdet av morgonen",
+
+    "renewingtawhid": "Förnyelse av Tawhid",
+    "enteringevening": "Vid inträdet av kvällen",
+    "goodevening": "Bön om en god kväll",
+    "blessedevening": "Bön om en välsignad kväll",
+
+    "afterbreakingfast": "Efter att ha brutit fastan #1",
+    "afterbreakingfast1": "Efter att ha brutit fastan #2",
+    "foronewhogivesfood": "Bön för den som ger en mat eller dryck",
+    "beforeeating": "Före maten #1",
+    "beforeeating1": "Före maten #2",
+    "aftereating": "Efter maten #1",
+    "aftereating1": "Efter maten #2",
+
+    "postprayer1": "Efter bönen #1",
+    "postprayer2": "Efter bönen #2",
+    "postprayer3": "Efter bönen #3",
+    "postprayer4": "Efter bönen #4",
+    "afterfajrandmaghrib": "Efter Fajr och Maghrib #1",
+    "afterfajrandmaghrib1": "Efter Fajr och Maghrib #2",
+    "afterfajr": "Efter Fajr",
+    "afterwitr": "Efter Witr",
+
+    "morningduatranslation": "Vi har nått morgonen och herraväldet tillhör Allah, och jag vittnar att det inte finns någon värdig att dyrkas utom Allah.",
+    "gooddaytranslation": "Vi har nått morgonen och herraväldet tillhör Allah. All lovprisning tillhör Allah. Det finns ingen värdig att dyrkas utom Allah, den Ende utan partner. Honom tillhör herraväldet och Honom tillhör lovprisningen, och Han har makt över allting. Min Herre, jag ber Dig om det goda i denna dag och det goda som följer den, och jag söker skydd hos Dig från det onda i denna dag och det onda som följer den. Min Herre, jag söker skydd hos Dig från lättja och ett dåligt åldrande. Min Herre, jag söker skydd hos Dig från Helvetets straff och gravens straff.",
+    "blesseddaytranslation": "Vi har nått morgonen och herraväldet tillhör Allah, världarnas Herre. O Allah, jag ber Dig om det goda i denna dag: dess seger, dess hjälp, dess ljus, dess välsignelse och dess vägledning. Jag söker skydd hos Dig från det onda i den och det onda som följer den.",
+    "enteringmorningtranslation": "O Allah, genom Dig har vi nått morgonen och genom Dig når vi kvällen. Genom Dig lever vi och genom Dig dör vi, och till Dig är uppståndelsen.",
+
+    "renewingtawhidtranslation": "Vi har nått kvällen på Islams naturliga religion, på uppriktighetens ord, på vår profet Muhammeds ﷺ religion och på vår fader Abrahams väg, han som var uppriktigt hängiven och underkastad Allah och inte var av dem som sätter medgudar vid Hans sida. (an-Nasā'ī)",
+    "enteringeveningtranslation": "Vi har nått kvällen och herraväldet tillhör Allah, och jag vittnar att det inte finns någon värdig att dyrkas utom Allah.",
+    "goodeveningtranslation": "Vi har nått kvällen och herraväldet tillhör Allah. All lovprisning tillhör Allah. Det finns ingen värdig att dyrkas utom Allah, den Ende utan partner. Honom tillhör herraväldet och Honom tillhör lovprisningen, och Han har makt över allting. Min Herre, jag ber Dig om det goda i denna natt och det goda som följer den, och jag söker skydd hos Dig från det onda i denna natt och det onda som följer den. Min Herre, jag söker skydd hos Dig från lättja och ett dåligt åldrande. Min Herre, jag söker skydd hos Dig från Helvetets straff och gravens straff.",
+    "blessedeveningtranslation": "Vi har nått kvällen och herraväldet tillhör Allah, världarnas Herre. O Allah, jag ber Dig om det goda i denna natt: dess seger, dess hjälp, dess ljus, dess välsignelse och dess vägledning. Jag söker skydd hos Dig från det onda i den och det onda som följer den.",
+
+    "afterbreakingfasttranslation": "O Allah, för Dig har jag fastat och med Din försörjning har jag brutit min fasta.",
+    "afterbreakingfast1translation": "Törsten har försvunnit, ådrorna har fuktats och belöningen har fastställts, om Allah vill.",
+    "foronewhogivesfoodtranslation": "O Allah, ge mat till den som har gett mig mat och ge dryck till den som har gett mig att dricka.",
+    "beforeeatingtranslation": "I Allahs namn.",
+    "beforeeating1translation": "O Allah, välsigna det för oss och ge oss något bättre än det.",
+    "aftereatingtranslation": "All lovprisning tillhör Allah som har gett mig detta att äta och försörjt mig med det utan någon kraft eller styrka från mig själv.",
+    "aftereating1translation": "All lovprisning tillhör Allah - riklig, god och välsignad lovprisning, en lovprisning som aldrig upphör, som inte överges och som vi aldrig kan vara utan, vår Herre.",
+
+    "postprayer1translation": "Jag ber Allah om förlåtelse.",
+    "postprayer2translation": "O Allah, Du är Friden och från Dig kommer friden. Välsignad är Du, Du full av majestät och ära.",
+    "postprayer3translation": "Det finns ingen värdig att dyrkas utom Allah, den Ende utan partner. Honom tillhör herraväldet och Honom tillhör lovprisningen, och Han har makt över allting. O Allah, ingen kan hindra det Du ger och ingen kan ge det Du hindrar; och den förmögnes rikedom gagnar honom inte inför Dig.",
+    "postprayer4translation": "Det finns ingen värdig att dyrkas utom Allah, den Ende utan partner. Honom tillhör herraväldet och Honom tillhör lovprisningen, och Han har makt över allting. Det finns ingen kraft och ingen styrka utom genom Allah. Vi dyrkar ingen utom Honom. Honom tillhör nåden, ynnesten och den vackra lovprisningen. Vi ägnar vår religion uppriktigt åt Honom, även om de otrogna ogillar det.",
+    "afterfajrandmaghribtranslation": "Det finns ingen värdig att dyrkas utom Allah, den Ende utan partner. Honom tillhör herraväldet och Honom tillhör lovprisningen. Han ger liv och Han ger död, och Han har makt över allting.",
+    "afterfajrandmaghrib1translation": "O Allah, rädda mig från Elden.",
+    "afterfajrtranslation": "O Allah, jag ber Dig om nyttig kunskap, god och ren försörjning och handlingar som accepteras.",
+    "afterwitrtranslation": "Fullkomlig är Konungen, den Allra Heligaste."
   },
   "quran": {
     "taraweeh": "Taraweeh",

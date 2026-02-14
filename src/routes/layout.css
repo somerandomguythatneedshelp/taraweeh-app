@@ -120,10 +120,11 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
+  html, body {
+    background-color: transparent !important; /* Override the inline style we set in JS */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent body scroll, let content-scroller handle it */
   }
 }

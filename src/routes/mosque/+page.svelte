@@ -8,6 +8,7 @@
   import { surahId } from '$lib/stores.js';
   import SurahInfo from '../../components/SurahInfo.svelte';
   import { goto } from '$app/navigation';
+  import { localizeHref } from '$lib/paraglide/runtime';
 
   interface Surah {
     surah_number: number;
@@ -89,6 +90,10 @@
     'hull-mosque': {
       name: 'Hull Mosque & Islamic Centre',
       desc: [m['hull-mosque.desc']]
+    },
+    'hull-jame-masjid': {
+      name: 'Hull Jame Masjid',
+      desc: [m['hull-jame-masjid.desc']]
     }
   } as const;
 
@@ -157,6 +162,27 @@
   {#if surahInfo}
     <SurahInfo></SurahInfo>
   {:else if mosque}
+    <button
+      class="mb-4 flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white"
+      on:click={() => {
+        goto('/')
+      }}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+      Go back
+    </button>
     <header class="mb-6 border-b border-white/10 pb-4">
       <h1
         class="bg-gradient-to-r from-white to-white/60 bg-clip-text text-2xl font-bold text-transparent"

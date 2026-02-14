@@ -9,6 +9,7 @@
   },
   "mosques": {
     "mosque": "Masjid",
+    "goback": "3oda",
     "ai_warning": "Yetem ta7deed sowar el-Quran bemosa3adet el-zekaa el-sena3y. Momken el-nata2eg ma tekonsh sa7ee7 da2eman."
   },
   "ercf": {
@@ -23,12 +24,69 @@
   "hull-mosque": {
     "desc": "\"Hull Mosque & Islamic Centre\" howa far3 men el-b3tha el-islameya el-britanya, we et2asas fe Hull 3am 1984. Men thalik el-7een, yekhdem el-mogtama3 be2eso el-markaz el-ra2eesi lel-mogtama3 el-muslim fe Hull. We ya3d Masjed Hull mawred da3m we tawjeeh lel-mogtama3 be2oso, we kan 3ala mor el-sneen noqtet el-ette9al el-awla le-3adeed men el-wafedeen el-godod lel-madina men el-mohajereen wel-la2e2een."
   },
+  "hull-jame-masjid": {
+    "desc": "1987 mein qaim, \"Hull Jame Masjid\" Hull community ka ek bunyadi markaz rahi hai pichle 35 saalon se. Hum sirf ibadat ki jagah nahi hain; hum ek dedicated community hub hain jo apne padosiyon ki madad aur unko uplift karne ke liye mukhtalif services faraham karta hai. Aaj hi humare mission mein shamil ho aur ek mustaqil farq dalne mein hissa lein."
+  },
   "dhikr": {
     "dhikr": "Dhikr",
     "morning": "Azkar El Sabah",
     "evening": "Azkar El Masa2",
     "eating": "Azkar El Ta3am",
-    "postprayer": "Azkar Ba3d El Salah"
+    "postprayer": "Azkar Ba3d El Salah",
+
+    "morningdua": "Doaa El Sabah",
+    "goodday": "Doaa li khair el yom",
+    "blessedday": "Doaa li yom mubaraka",
+    "enteringmorning": "3and dokhol el sabah",
+
+    "renewingtawhid": "Tajdeed El Tawhid",
+    "enteringevening": "3and dokhol el masa2",
+    "goodevening": "Doaa li khair el masa2",
+    "blessedevening": "Doaa li masa2 mubaraka",
+
+    "afterbreakingfast": "Ba3d el iftar #1",
+    "afterbreakingfast1": "Ba3d el iftar #2",
+    "foronewhogivesfood": "Doaa liman a63amak aw saqak",
+    "beforeeating": "Qabl el akl #1",
+    "beforeeating1": "Qabl el akl #2",
+    "aftereating": "Ba3d el akl #1",
+    "aftereating1": "Ba3d el akl #2",
+
+    "postprayer1": "Ba3d el salah #1",
+    "postprayer2": "Ba3d el salah #2",
+    "postprayer3": "Ba3d el salah #3",
+    "postprayer4": "Ba3d el salah #4",
+    "afterfajrandmaghrib": "Ba3d el fajr wel maghrib #1",
+    "afterfajrandmaghrib1": "Ba3d el fajr wel maghrib #2",
+    "afterfajr": "Ba3d el fajr",
+    "afterwitr": "Ba3d el witr",
+
+    "morningduatranslation": "Asbahna wa asbah el molk lel lah, wa ashhadu an la ilaha illa Allah.",
+    "gooddaytranslation": "Asbahna wa asbah el molk lel lah, wal hamdu lel lah, la ilaha illa Allah wahdahu la sharika lah, lahul molk wa lahul hamd wa huwa 3ala koll shay2 qadeer. Rab as2aloka khair ma fi hatha el yawm wa khair ma ba3dah, wa a3وذ bika men shar ma fi hatha el yawm wa shar ma ba3dah. Rab a3وذ bika men el kasal wa soo2 el kibar, rab a3وذ bika men 3athab el nar wa 3athab el qabr.",
+    "blesseddaytranslation": "Asbahna wa asbah el molk lel lah rabb el 3alameen. Allahumma inni as2aloka khair hatha el yawm: fathahu wa nasrahu wa nourahu wa barakatahu wa hodahu, wa a3وذ bika men shar ma feeh wa shar ma ba3dah.",
+    "enteringmorningtranslation": "Allahumma bika asbahna wa bika amsayna, wa bika nahya wa bika namout, wa ilayka el noshour.",
+
+    "renewingtawhidtranslation": "Amsayna 3ala fitrat el Islam, wa kalimat el ikhlas, wa deen nabeyna Muhammad ﷺ, wa 3ala millat abina Ibrahim hanifan musliman wa ma kana men el moshrekeen. (Al-Nasa2i)",
+    "enteringeveningtranslation": "Amsayna wa amsa el molk lel lah, wa ashhadu an la ilaha illa Allah.",
+    "goodeveningtranslation": "Amsayna wa amsa el molk lel lah, wal hamdu lel lah, la ilaha illa Allah wahdahu la sharika lah, lahul molk wa lahul hamd wa huwa 3ala koll shay2 qadeer. Rab as2aloka khair ma fi hathihi el layla wa khair ma ba3daha, wa a3وذ bika men shar ma fi hathihi el layla wa shar ma ba3daha. Rab a3وذ bika men el kasal wa soo2 el kibar, rab a3وذ bika men 3athab el nar wa 3athab el qabr.",
+    "blessedeveningtranslation": "Amsayna wa amsa el molk lel lah rabb el 3alameen. Allahumma inni as2aloka khair hathihi el layla: fathaha wa nasraha wa nouraha wa barakataha wa hodaha, wa a3وذ bika men shar ma feeha wa shar ma ba3daha.",
+
+    "afterbreakingfasttranslation": "Allahumma laka sumt wa 3ala rezqika aftart.",
+    "afterbreakingfast1translation": "Thahaba el zama2 wa abtallat el 3orouq wa thabata el ajr in sha2 Allah.",
+    "foronewhogivesfoodtranslation": "Allahumma a6em man a6amani wasqi man saqani.",
+    "beforeeatingtranslation": "Bismillah.",
+    "beforeeating1translation": "Allahumma barik lana feeh wa a6emna khairan menno.",
+    "aftereatingtranslation": "Alhamdulillah allathi a6amani hatha wa razaqani min ghair hawlin minni wa la quwwa.",
+    "aftereating1translation": "Alhamdulillah hamdan katheeran tayyiban mubarakan feeh, ghair makfiyin wa la muwadda3 wa la mostaghna 3anhu rabbana.",
+
+    "postprayer1translation": "Astaghfirullah.",
+    "postprayer2translation": "Allahumma anta el salam wa minka el salam, tabarakta ya dhal jalali wal ikram.",
+    "postprayer3translation": "La ilaha illa Allah wahdahu la sharika lah, lahul molk wa lahul hamd wa huwa 3ala koll shay2 qadeer. Allahumma la mani3 lima a3tayt wa la mo3ti lima mana3t wa la yanfa3u dhal jaddi minkal jadd.",
+    "postprayer4translation": "La ilaha illa Allah wahdahu la sharika lah, lahul molk wa lahul hamd wa huwa 3ala koll shay2 qadeer. La hawla wa la quwwata illa billah. La ilaha illa Allah wa la na3budu illa iyah, lahun ni3ma wa lahul fadl wa lahuth thana2 el hasan. La ilaha illa Allah mokhliseen lahud deen wa law kariha el kafiroon.",
+    "afterfajrandmaghribtranslation": "La ilaha illa Allah wahdahu la sharika lah, lahul molk wa lahul hamd, yohyi wa yomeet wa huwa 3ala koll shay2 qadeer.",
+    "afterfajrandmaghrib1translation": "Allahumma ajerni men el nar.",
+    "afterfajrtranslation": "Allahumma inni as2aloka 3ilman nafi3an, wa rezqan tayyiban, wa 3amalan motaqabbalan.",
+    "afterwitrtranslation": "Subhan al malik al quddous."
   },
   "quran": {
     "taraweeh": "Etarawi7",
