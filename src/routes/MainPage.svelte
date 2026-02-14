@@ -54,8 +54,7 @@
         see https://svelte.dev/docs/kit/%24app-paths#resolve 
         for details-->
         <!--eslint-disable-next-line svelte/no-navigation-without-resolve-->
-        <a
-          href={localizeHref(`/mosque?m=${mosque.slug}`)}
+        <a href={localizeHref(`/mosque?m=${mosque.slug}`)}
           on:click={() => (loading = true)}
           class="mosque border border-white/5 bg-white/[0.03]"
           id={mosque.id}
@@ -118,7 +117,7 @@
         x="12"
         y="19"
         text-anchor="middle"
-        font-size="21" 
+        font-size="21"
         fill="currentColor"
         font-family="serif"
         direction="rtl"

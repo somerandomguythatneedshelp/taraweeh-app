@@ -17,13 +17,19 @@
   function handleDhikrClick(id: number) {
     selectedDhikr = Dhikr[id];
   }
+
+  type MessageMap = {
+    [key in typeof dhikr[number]['id']]: () => string;
+  };
+
+  const messages = m as unknown as MessageMap;
 </script>
 
 <div class="dhikr-container">
   <div class="dhikr-grid">
     {#each dhikr as d, i (i)}
       <button class="dhikr-card" onclick={() => handleDhikrClick(i)}>
-        <span class="card-label">{(m as any)[d.id]()}</span>
+        <span class="card-label">{messages[d.id]()}</span>
       </button>
     {/each}
   </div>
@@ -31,10 +37,10 @@
   <div class="mt-4">
     {#if selectedDhikr}
       <div class="details-container">
-        {#each Object.entries(selectedDhikr) as [key, value], i}
+        {#each Object.entries(selectedDhikr) as [key, value], i (i)}
           <div class="dhikr-detail-item">
             <p class="detail-label">
-              {(m as any)[key] ? (m as any)[key]() : key}
+              {messages[key] ? messages[key]() : key}
             </p>
 
             <p class="arabic-text" dir="rtl">
@@ -42,9 +48,7 @@
             </p>
 
             <p class="translation-text">
-              {(m as any)[value.translationlocale]
-                ? (m as any)[value.translationlocale]()
-                : value.translationlocale}
+              {messages[value.translationlocale] ? messages[value.translationlocale]() : value.translationlocale}
             </p>
 
             {#if i < Object.entries(selectedDhikr).length - 1}

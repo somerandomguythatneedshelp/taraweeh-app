@@ -8,7 +8,6 @@
   import { surahId } from '$lib/stores.js';
   import SurahInfo from '../../components/SurahInfo.svelte';
   import { goto } from '$app/navigation';
-  import { localizeHref } from '$lib/paraglide/runtime';
 
   interface Surah {
     surah_number: number;
@@ -165,7 +164,7 @@
     <button
       class="mb-4 flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white"
       on:click={() => {
-        goto('/')
+        goto('/'); // eslint-disable-line svelte/no-navigation-without-resolve
       }}
     >
       <svg
@@ -323,9 +322,7 @@
                             // an internal 500 error for some reason,
                             // even though the navigation works perfectly fine
                             // eslint-disable-next-line svelte/no-navigation-without-resolve
-                            goto(
-                              `/mosque?m=${mosqueId}&s=${s.surah_number}`
-                            );
+                            goto(`/mosque?m=${mosqueId}&s=${s.surah_number}`);
                           }}
                         >
                           <svg

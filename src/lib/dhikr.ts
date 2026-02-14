@@ -1,6 +1,11 @@
 import { DhikrType } from './Dhikrs';
 
-const Dhikr = {
+const Dhikr: {
+  [index: number]: Record<
+    string,
+    { arabic: string; translationlocale: string }
+  >;
+} = {
   [DhikrType.MORNING]: {
     'dhikr.morningdua': {
       arabic:

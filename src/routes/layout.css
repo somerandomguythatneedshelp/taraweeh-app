@@ -120,7 +120,8 @@
 }
 
 @layer base {
-  html, body {
+  html,
+  body {
     background-color: transparent !important; /* Override the inline style we set in JS */
     height: 100%;
     margin: 0;

@@ -1,11 +1,11 @@
 /// <reference types="@sveltejs/kit" />
+
 import { build, files, version } from '$service-worker';
 
 const CACHE = `cache-${version}`;
-
-// Assets from the 'build' (Svelte/JS/CSS) and 'static' (images/favicons)
 const ASSETS = [...build, ...files];
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 self.addEventListener('install', (event: any) => {
   async function addFilesToCache() {
     const cache = await caches.open(CACHE);
@@ -15,6 +15,7 @@ self.addEventListener('install', (event: any) => {
   event.waitUntil(addFilesToCache());
 });
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 self.addEventListener('activate', (event: any) => {
   async function deleteOldCaches() {
     for (const key of await caches.keys()) {
@@ -25,6 +26,7 @@ self.addEventListener('activate', (event: any) => {
   event.waitUntil(deleteOldCaches());
 });
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 self.addEventListener('fetch', (event: any) => {
   if (event.request.method !== 'GET') return;
 
@@ -32,13 +34,11 @@ self.addEventListener('fetch', (event: any) => {
     const url = new URL(event.request.url);
     const cache = await caches.open(CACHE);
 
-    // 1. Serve build/static assets from cache
     if (ASSETS.includes(url.pathname)) {
       const cachedResponse = await cache.match(event.request);
       if (cachedResponse) return cachedResponse;
     }
 
-    // 2. Strategy: Network First, falling back to cache
     try {
       const response = await fetch(event.request);
 
@@ -47,11 +47,11 @@ self.addEventListener('fetch', (event: any) => {
       }
 
       return response;
-    } catch (err) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_err: unknown) {
       const cachedResponse = await cache.match(event.request);
       if (cachedResponse) return cachedResponse;
-      
-      // Fallback if offline and not in cache
+
       return new Response('Offline: Content not available', {
         status: 408,
         headers: { 'Content-Type': 'text/plain' }
