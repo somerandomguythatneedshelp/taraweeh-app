@@ -5,6 +5,7 @@
     localizeHref,
     getLocale
   } from '$lib/paraglide/runtime';
+  import * as m from '$lib/paraglide/messages.js';
   import './layout.css';
   import favicon from '$lib/assets/favicon.ico';
   import favicon57x57 from '$lib/assets/favicon57x57.png';
@@ -13,10 +14,16 @@
   import favicon114x114 from '$lib/assets/favicon114x114.png';
   import favicon144x144 from '$lib/assets/favicon144x144.png';
   import { getTimeDescription } from '$lib/backgroundHelper';
-
   import { resolve } from '$app/paths';
+  import { goto } from '$app/navigation';
 
   let { children } = $props();
+
+  const active = $derived(() => {
+    if (page.url.pathname.startsWith('/dhikr')) return 'dhikr';
+    if (page.url.pathname.startsWith('/settings')) return 'settings';
+    return 'mosque';
+  });
 
   // state
   let currentDateTime = $state(new Date());
@@ -124,6 +131,86 @@
   {@render children()}
 </div>
 
+<!-- Bottom Nav Bar -->
+<div class="bottom-nav border border-white/5 bg-black/50">
+  <button
+    class="nav-item {active() === 'mosque' ? 'active' : ''}"
+    on:click={() => goto('/')}
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M2 20h20" />
+      <path d="M12 11V7" />
+      <path d="M12 7a5 5 0 0 0-5 5v8h10v-8a5 5 0 0 0-5-5Z" />
+      <path d="M17 20v-7a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v7" />
+      <path d="M7 20v-7a2 2 0 0 0-2-2h0a2 2 0 0 0-2 2v7" />
+      <path d="M12 4v1" />
+      <path d="M11 2.5a1.5 1.5 0 1 1 2 0" />
+    </svg>
+    <span>{m['mosques.mosque']()}</span>
+    <span class="indicator"></span>
+  </button>
+
+  <button
+    class="nav-item {active() === 'dhikr' ? 'active' : ''}"
+    on:click={() => goto('/dhikr')}
+  >
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <text
+        x="12"
+        y="19"
+        text-anchor="middle"
+        font-size="21"
+        fill="currentColor"
+        font-family="serif"
+        direction="rtl"
+        unicode-bidi="bidi-override"
+      >
+        الله
+      </text>
+    </svg>
+    <span>{m['dhikr.dhikr']()}</span>
+  </button>
+
+  <button
+    class="nav-item {active() === 'settings' ? 'active' : ''}"
+    on:click={() => goto('/settings')}
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <circle cx="12" cy="12" r="3" />
+      <path
+        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+      />
+    </svg>
+    <span>{m['settings.settings']()}</span>
+    <span class="indicator"></span>
+  </button>
+</div>
+
 <div style="display:none">
   <!-- eslint-disable-next-line svelte/require-each-key -->
   {#each locales as locale}
@@ -186,6 +273,78 @@
     min-height: 100vh;
     color: white;
     height: 100%;
+  }
+
+  .bottom-nav {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    max-width: 400px;
+    height: 70px;
+    border-radius: 35px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    padding: 0 10px;
+  }
+
+  .nav-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #747272;
+    background: none;
+    border: none;
+    flex: 1;
+    font-size: 12px;
+    transition: color 0.3s;
+    cursor: pointer;
+  }
+
+  .nav-item svg {
+    width: 28px;
+    height: 28px;
+    margin-bottom: -6px;
+    transition: transform 0.3s;
+  }
+
+  .nav-item.active {
+    color: #fff;
+  }
+
+  .nav-item.active svg {
+    transform: translateY(-4px) scale(1.2);
+  }
+
+  .indicator {
+    position: absolute;
+    bottom: -7px;
+    width: 25px;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0;
+    transition:
+      opacity 0.3s,
+      transform 0.3s;
+  }
+
+  .nav-item.active .indicator {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-item span {
+    pointer-events: none;
+  }
+
+  .nav-item:focus {
+    outline: none;
   }
 
   :global(html),

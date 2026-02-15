@@ -37,6 +37,8 @@
     "beforesleeptitle": "Innan Sömn",
     "nightmares": "Mardrömmar",
     "death": "Död",
+    "sunnah": "Sunnah",
+    "wakingup": "Att vakna",
 
     "morningdua": "Morgonens åkallan",
     "goodday": "Bön om en god dag",
@@ -91,6 +93,23 @@
     "visitingagraveyard2": "När man besöker en kyrkogård #2",
     "placingdeceasedinsideagrave": "När man placerar den avlidne i graven",
 
+    "attainmentforgood": "Uppnåelse av allt gott",
+    "bestoutcomes": "Bön om de bästa resultaten",
+    "forgivnessforallsins": "Förlåtelse för alla typer av synder",
+    "askingforgoodandprotectionfromevil": "Bön om gott och skydd från ont",
+    "forwhatisbest": "Bön om det som är bäst",
+    "protectionfrombadendings": "Skydd från dåliga slut",
+    "freqduafromprophet": "Profetens frekventa dua",
+    "innerpeaceandstrength": "Bön om inre frid och styrka",
+    "wisdomandgoodending": "Bön om visdom och ett gott slut",
+    "forgivenessandease": "Bön om förlåtelse och lättnad",
+    "firmnessandvictory": "Bön om stadga och seger",
+    "timesofdistress": "I tider av prövning",
+
+    "changingsidesatnight": "När man byter sida i sängen",
+    "afterwakingup1": "Efter att vakna #1",
+    "afterwakingup2": "Efter att vakna #2",
+
     "morningduatranslation": "Vi har nått morgonen och herraväldet tillhör Allah, och jag vittnar att det inte finns någon värdig att dyrkas utom Allah.",
     "gooddaytranslation": "Vi har nått morgonen och herraväldet tillhör Allah. All lovprisning tillhör Allah. Det finns ingen värdig att dyrkas utom Allah, den Ende utan partner. Honom tillhör herraväldet och Honom tillhör lovprisningen, och Han har makt över allting. Min Herre, jag ber Dig om det goda i denna dag och det goda som följer den, och jag söker skydd hos Dig från det onda i denna dag och det onda som följer den. Min Herre, jag söker skydd hos Dig från lättja och ett dåligt åldrande. Min Herre, jag söker skydd hos Dig från Helvetets straff och gravens straff.",
     "blesseddaytranslation": "Vi har nått morgonen och herraväldet tillhör Allah, världarnas Herre. O Allah, jag ber Dig om det goda i denna dag: dess seger, dess hjälp, dess ljus, dess välsignelse och dess vägledning. Jag söker skydd hos Dig från det onda i den och det onda som följer den.",
@@ -142,7 +161,24 @@
     "supplicationfordeadduringjanazah2translation": "O Allah, förlåt oss som lever och de som har dött, unga och gamla, män och kvinnor, närvarande och frånvarande. O Allah, vem Du låter leva bland oss, låt honom leva enligt Islam; och vem Du låter dö bland oss, låt honom dö med tro. O Allah, beröva oss inte hans belöning och pröva oss inte efter honom.",
     "visitingagraveyard1translation": "Frid vare med er, ni troende och muslimska invånare av denna plats. Allahs vilja är att vi kommer att förena oss med er. Vi ber Allah att ge oss och er välbefinnande.",
     "visitingagraveyard2translation": "Frid vare med er, ni som bor i graven! Må Allah förlåta oss och er; ni är våra föregångare och vi ska följa er.",
-    "placingdeceasedinsideagravetranslation": "I Allahs namn och enligt Sändebudets sunna."
+    "placingdeceasedinsideagravetranslation": "I Allahs namn och enligt Sändebudets sunna.",
+
+    "attainmentforgoodtranslation": "O Allah, vi ber Dig om allt som förtjänar Din nåd och beslutsamhet att göra allt som förtjänar Din förlåtelse; om skydd från varje synd och förverkligande av varje god handling; för att uppnå Paradiset och frihet från Helvetet.",
+    "bestoutcomestranslation": "O Allah, ge oss det bästa resultatet i alla våra ärenden och skydda oss från världens förödmjukelse och straffet i nästa liv.",
+    "forgivnessforallsinstranslation": "O Allah, förlåt mig alla mina synder: små och stora, första och sista, offentliga och privata.",
+    "askingforgoodandprotectionfromeviltranslation": "O Allah, jag ber Dig om allt gott: det omedelbara och det fördröjda, vad jag vet och inte vet. Jag söker Ditt skydd från allt ont: omedelbart och fördröjt, känt och okänt. O Allah, jag ber Dig om det goda som Din tjänare och Profet ﷺ bad Dig om, och jag söker Ditt skydd från det onda som Din tjänare och Profet ﷺ sökte skydd från. O Allah, jag ber Dig om Paradiset och allt som leder till det, och jag söker Ditt skydd från Helvetet och allt som leder dit. Låt allt som Du förordnat bli gott för mig.",
+    "forwhatisbesttranslation": "O Allah, med Din kunskap om det osedda och Din absoluta makt över skapelsen, låt mig leva i denna värld så länge Du vet att mitt liv är gott för mig; och ge mig döden när Du vet att döden är bättre för mig. O Allah, jag ber Dig om Din fruktan i det privata och offentliga, och sanningen i glädje och vrede. Jag ber Dig om måttfullhet i fattigdom och rikedom. Jag ber Dig om oändliga välsignelser och eviga nöjen. Gör mig nöjd med ödet; för ett behagligt liv efter döden; för nöjet att se Ditt Ansikte; och för längtan att möta Dig, utan smärtsamma prövningar som vilseleder. O Allah, pryd oss med trons skönhet och gör oss till de som vägleder andra och själva vägletts.",
+    "protectionfrombadendingstranslation": "O Allah, jag söker Ditt skydd från ålderdom, från att dö genom fall eller krossas; från att dö av sorg, eld eller drunkning. Jag söker Ditt skydd från att bli träffad av shayṭān vid döden och dödas. Jag söker Ditt skydd från att dö medan jag flyr från strid. Jag söker Ditt skydd från att dö av giftigt sting.",
+    "freqduafromprophettranslation": "Vår Herre, ge oss gott i denna värld och gott i nästa, och skydda oss från eldens plåga.",
+    "innerpeaceandstrengthtranslation": "Min Herre, ge mitt hjärta frid och gör min uppgift lätt för mig.",
+    "wisdomandgoodendingtranslation": "Min Herre, ge mig visdom och förena mig med de rättfärdiga. Låt mig bli nämnd med heder bland senare generationer och tillhör de som ärvde Salighetens Trädgård… Låt mig inte skämmas på uppståndelsens dag när varken rikedom eller barn hjälper, utom den som kommer till Allah med ett rent hjärta.",
+    "forgivenessandeasetranslation": "Vår Herre, bestraffa oss inte om vi har glömt eller felat. Vår Herre, lägg inte en börda på oss som Du lade på dem före oss. Förlåt oss, ha barmhärtighet med oss och hjälp oss mot de otrogna.",
+    "firmnessandvictorytranslation": "Vår Herre, ge oss tålamod, gör våra steg stadiga och ge oss seger över de otrogna.",
+    "timesofdistresstranslation": "(Min Herre), verkligen har prövningar drabbat mig, och Du är den mest Barmhärtige av de barmhärtiga.",
+
+    "changingsidesatnighttranslation": "Det finns ingen gud värdig att dyrkas utom Allah: Den Enige, Allsmäktige; Herre över himlarna, jorden och allt däremellan; Den Mäktige, Den Mest Förlåtande.",
+    "afterwakingup1translation": "All pris tillkommer Allah som gav mig välmående i min kropp, återlämnade min själ och tillät mig att minnas Honom.",
+    "afterwakingup2translation": "All pris tillkommer Allah som gav oss liv efter att ha tagit det, och till Honom är uppståndelsen."
   },
   "quran": {
     "taraweeh": "Taraweeh",

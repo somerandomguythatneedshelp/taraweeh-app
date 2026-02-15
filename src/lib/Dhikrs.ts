@@ -6,7 +6,9 @@ enum DhikrType {
   IMANPROTECTION = '4',
   BEFORESLEEP = '5',
   NIGHTMARES = '6',
-  DEATH = '7'
+  DEATH = '7',
+  SUNNAH = '8',
+  WAKINGUP = '9'
 }
 
 export { DhikrType };

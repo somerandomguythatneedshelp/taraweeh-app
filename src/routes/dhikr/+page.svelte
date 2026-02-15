@@ -14,7 +14,9 @@
     { id: 'dhikr.imanprotection' },
     { id: 'dhikr.beforesleeptitle' },
     { id: 'dhikr.nightmares' },
-    { id: 'dhikr.death' }
+    { id: 'dhikr.death' },
+    { id: 'dhikr.sunnah' },
+    { id: 'dhikr.wakingup' }
   ];
 
   var selectedDhikr: Record<

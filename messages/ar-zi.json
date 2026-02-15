@@ -37,6 +37,8 @@
     "beforesleeptitle": "Qabl el nom",
     "nightmares": "El kawabis",
     "death": "El mawt",
+    "sunnah": "As-Sunnah",
+    "wakingup": "Al-istiqaz",
 
     "morningdua": "Doaa El Sabah",
     "goodday": "Doaa li khair el yom",
@@ -91,6 +93,23 @@
     "visitingagraveyard2": "3ndama tazur el maqbara #2",
     "placingdeceasedinsideagrave": "3ndama tadh3 el mayyit fi el qabr",
 
+    "attainmentforgood": "El-hoṣool 3ala kol khayr",
+    "bestoutcomes": "Ed-dua2 li afdal el-nata2ij",
+    "forgivnessforallsins": "El-maghfirah likol anwa3 el-dhunoob",
+    "askingforgoodandprotectionfromevil": "Ed-dua2 lel-khayr wal-7imayah men el-shar",
+    "forwhatisbest": "Talab ma huwa khayr",
+    "protectionfrombadendings": "El-7imayah men el-nihayat el-say2ah",
+    "freqduafromprophet": "Du3a2 el-nabi el-motakarrar",
+    "innerpeaceandstrength": "Ed-dua2 lel-sakinah el-dakhiliyah wal-quwwah",
+    "wisdomandgoodending": "Ed-dua2 lel-7ikmah wa nihayah 7asanah",
+    "forgivenessandease": "Ed-dua2 bel-maghfirah wal-yusr",
+    "firmnessandvictory": "Ed-dua2 bel-thabat wal-nasr",
+    "timesofdistress": "Awqat el-shiddah",
+
+    "changingsidesatnight": "3end taghyeer el-janib fi el-nawm",
+    "afterwakingup1": "Ba3d el-istiqaaz #1",
+    "afterwakingup2": "Ba3d el-istiqaaz #2",
+
     "morningduatranslation": "Asbahna wa asbah el molk lel lah, wa ashhadu an la ilaha illa Allah.",
     "gooddaytranslation": "Asbahna wa asbah el molk lel lah, wal hamdu lel lah, la ilaha illa Allah wahdahu la sharika lah, lahul molk wa lahul hamd wa huwa 3ala koll shay2 qadeer. Rab as2aloka khair ma fi hatha el yawm wa khair ma ba3dah, wa a3وذ bika men shar ma fi hatha el yawm wa shar ma ba3dah. Rab a3وذ bika men el kasal wa soo2 el kibar, rab a3وذ bika men 3athab el nar wa 3athab el qabr.",
     "blesseddaytranslation": "Asbahna wa asbah el molk lel lah rabb el 3alameen. Allahumma inni as2aloka khair hatha el yawm: fathahu wa nasrahu wa nourahu wa barakatahu wa hodahu, wa a3وذ bika men shar ma feeh wa shar ma ba3dah.",
@@ -142,7 +161,24 @@
     "supplicationfordeadduringjanazah2translation": "Allahumma ighfir lana wal-amwat, sigharan wa kibar, dhukuran wa untha, hadirun wa ghaibun, waman ahyaita baynana faj3alhu ya3ish bil-Islam, waman mata baynana faj3alhu yamut 3ala el-iman, wa la tahrimna ajrahu wa la taftinna ba3dahu.",
     "visitingagraveyard1translation": "As-salamu 3alaykum ahl hatha el-makan min el-mu'mineen wal-muslimeen, in sha Allah sanaltaqi bikum, nas'al Allah lana wa lakum el-3afiyah.",
     "visitingagraveyard2translation": "As-salamu 3alaykum ahl el-quboor, ighfir Allah lana wa lakum, antum aslafuna wa nahnu sanattabi3ukum.",
-    "placingdeceasedinsideagravetranslation": "Bismillah wa 3ala sunnat Rasool Allah."
+    "placingdeceasedinsideagravetranslation": "Bismillah wa 3ala sunnat Rasool Allah.",
+
+    "attainmentforgoodtranslation": "Allahumma, ns'aluka kull ma yastalzimu rahmatak wa 3azm 3ala kull ma yastalzimu maghfiratak; lil-7imayah min kull dhanb wa tahqiq kull khayr; linayl el-jannah wa al-najat min al-nar,",
+    "bestoutcomestranslation": "Allahumma, aj3al lana ahsan el-nata2ij fi jami3 umurna, wa a7mina min dhill ed-dunya wa 3adhab el-akhirah,",
+    "forgivnessforallsinstranslation": "Allahumma, ighfir li jami3 dhunoobi: es-saghair wal-kabir, el-awwal wal-akhir, el-3alani wal-khafi,",
+    "askingforgoodandprotectionfromeviltranslation": "Allahumma inni as'aluka kull khayr: 3ajilahu wa ajilahu, ma 3alimtu minhu wa ma lam a3lam, wa a3udhu bika min kull sharr: 3ajilahu wa ajilahu, ma 3alimtu minhu wa ma lam a3lam, wa as'aluka el-jannah wa ma qarub ilayha min qawl wa 3amal, wa a3udhu bika min el-nar wa ma qarub ilayha min qawl wa 3amal, wasrif 3anni el-sharr fima qadayt li,",
+    "forwhatisbesttranslation": "Allahumma bi 3ilmik bel-ghayb wa qudratak 3ala el-khalq, aj3al hayati fi el-dunya ma dam khayr li, wa mamati idha kan el-mawt khayr li, Allahumma as'aluka khashyatak sirran wa 3alaniyah, wa haqq el-qawl fi surur wa ghadab, wal-i3tidal fi el-faqr wal-ghina, wal-barakat el-motajaddidah wal-na3im el-da'im, wal-rida bel-qada', wa hayah tayyibah ba3d el-mawt, wa liqa' wajhik el-karim, wal-shawq ilayk, doon muhn mudilla, Allahumma zayyinana bel-iman waj3alna min el-hadyeen wal-muhtadeen,",
+    "protectionfrombadendingstranslation": "Allahumma a3udhu bika min esh-shaykhuwwah, wa min el-mawt bel-suqut aw el-daq, wa min el-mawt bel-7uzn aw el-hariq aw el-gharaq, wa a3udhu bika an yuqtalni esh-shaytan 3ind el-mawt, wa a3udhu bika min el-mawt athna el-firar min el-ma3rakah, wa a3udhu bika min las3at el-sam,",
+    "freqduafromprophettranslation": "Rabbana atina khayr el-dunya wa khayr el-akhirah, wa qina 3adhab el-nar,",
+    "innerpeaceandstrengthtranslation": "Rabbi aj3al qalbi mutma2innan, wa yassir li amri,",
+    "wisdomandgoodendingtranslation": "Rabbi arzuqni el-hikmah wa ajma3ni ma3 el-salihin, wa aj3al li dhikran hasanan bayn el-khalf, wa aj3alni min warathat jannat el-na3im… wa la tukhzini yawma yub3athun, yawma la yanfa3 mal wala walad illa man ata Allah bi qalb salim,",
+    "forgivenessandeasetranslation": "Rabbana la tu'akhithna in nasina aw akhta'na, wa la tahmil 3alayna isran kama hamaltahu 3ala alladhina min qablina, waghfir lana warhamna, wa anta mawlana fansurna 3ala el-qawm el-kafirin,",
+    "firmnessandvictorytranslation": "Rabbana afrigh 3alayna sabran wa thabbit aqdamana wansurna 3ala el-qawm el-kafirin,",
+    "timesofdistresstranslation": "Rabbii qad asabatni el-dhurr wa anta arham el-rahimin,",
+
+    "changingsidesatnighttranslation": "La ilaha illa Allah wahdahu la shareek lah, rabb es-samawat wal-ard wa ma baynahuma, el-3aziz el-ghafur,",
+    "afterwakingup1translation": "Al-hamdu lillah alladhi a7yana ba3d ma amatna, wa arja3a ilayna roohana, wa adhkarnana bihi,",
+    "afterwakingup2translation": "Al-hamdu lillah alladhi a3adana ila el-hayat ba3d el-mawt, wa ilayh el-masir,"
   },
   "quran": {
     "taraweeh": "Etarawi7",
@@ -192,7 +228,7 @@
     "surah_name": "Al-An'am",
     "short_description": "A powerful Meccan Surah revealed in a single night, it dismantles polytheistic superstitions and establishes the intellectual foundations of Monotheism and the Hereafter.",
     "fun_fact": "Traditional accounts describe the revelation of this Surah as being so 'heavy' with divine presence that the she-camel the Prophet ﷺ was riding felt as though her bones might break under the weight.",
-    "long_description": "Surah Al-An'am was revealed during the 'Fourth Stage' of the Meccan period, a time of dark trials where the Prophet ﷺ and his followers were socially boycotted and physically threatened. In this atmosphere of apparent failure, the Surah provides a massive intellectual and spiritual boost. It systematically refutes Shirk (polytheism) by pointing to the 'Signs' of Allah in the natural world and the cosmos.\n\nA significant portion of the Surah (v. 74-90) recounts the story of Prophet Abraham, who observed the stars, the moon, and the sun, concluding that a transient creation cannot be God—only the Creator of these celestial bodies deserves worship. This was a direct challenge to the Quraish, who claimed to be the rightful heirs of Abraham's legacy while practicing idolatry.\n\n\n\nThe Surah also exposes the irrationality of the pagan Arabs' religious taboos concerning cattle (An'am), contrasting their man-made superstitions with the clear, moral, and divine restrictions of Islam. It concludes with a forceful proclamation of the Prophet’s mission: a life dedicated entirely to the Lord of the Worlds, reminding the believers that every soul is responsible for its own deeds and that the ultimate return is to Allah alone."
+    "long_description": "Surah Al-An'am was revealed during the 'Fourth Stage' of the Meccan period, a time of dark trials where the Prophet ﷺ and his followers were socially boycotted and physically threatened. In this atmosphere of apparent failure, the Surah provides a massive intellectual and spiritual boost. It systematically refutes Shirk (polytheism) by pointing to the 'Signs' of Allah in the natural world and the cosmos.\n\nA significant portion of the Surah (v. 74-90) recounts the story of Prophet Abraham, who observed the stars, the moon, and the sun, concluding that a transient creation cannot be God—only the Creator of these celestial bodies deserves worship. This was a direct challenge to the Quraish, who claimed to be the rightful heirs of Abraham's legacy while practicing idolatry.\n\n\n\nThe Surah also exposes the irrationality of the pagan Arabs' religious taboos concerning cattle (An'am), contrasting their man-made superstitions with the clear, moral, and divine restrictions of Islam. It concludes with a forceful proclamation of the Prophet's mission: a life dedicated entirely to the Lord of the Worlds, reminding the believers that every soul is responsible for its own deeds and that the ultimate return is to Allah alone."
   },
   "s7": {
     "surah_number": "7",

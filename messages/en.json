@@ -45,6 +45,8 @@
     "beforesleeptitle": "Before Sleep",
     "nightmares": "Nightmares",
     "death": "Death",
+    "sunnah": "Sunnah",
+    "wakingup": "Waking up",
 
     "morningdua": "Start of the Morning",
     "goodday": "Asking Allah for a Good Day",
@@ -99,6 +101,23 @@
     "visitingagraveyard2": "When visting a graveyard #2",
     "placingdeceasedinsideagrave": "When placing the deceased inside the grave",
 
+    "attainmentforgood": "Attainment for Every Good",
+    "bestoutcomes": "Asing for the Best Outcomes",
+    "forgivnessforallsins": "Forgiveness for all types of Sins",
+    "askingforgoodandprotectionfromevil": "Asking for Good and Protection from Evil",
+    "forwhatisbest": "Asking for what is best",
+    "protectionfrombadendings": "Protection from bad endings",
+    "freqduafromprophet": "Frequent Dua of the Prophet",
+    "innerpeaceandstrength": "Asking for Inner-Peace and Strength",
+    "wisdomandgoodending": "Asking for Wisdom and a Good Ending",
+    "forgivenessandease": "Asking for Forgivess and Ease",
+    "firmnessandvictory": "Asking for Firmness and Victory",
+    "timesofdistress": "Times of Distress",
+
+    "changingsidesatnight": "When changing sides in bed",
+    "afterwakingup1": "After Waking up #1",
+    "afterwakingup2": "After Waking up #2",
+
     "morningduatranslation": "I have entered the morning praising You, and I bear witness that there is no god worthy of worship but Allah.",
     "gooddaytranslation": "We have entered the morning and at this very time the whole kingdom belongs to Allah. All praise is due to Allah. There is no god worthy of worship except Allah, the One; He has no partner with Him. The entire kingdom belongs solely to Him, to Him is all praise due, and He is All-Powerful over everything. My Lord, I ask You for the good that is in this day and the good that follows it, and I seek Your protection from the evil that is in this day and from the evil that follows it. My Lord, I seek Your protection from laziness and the misery of old age. My Lord, I seek Your protection from the torment of the Hell-fire and the punishment of the grave.",
     "blesseddaytranslation": "We have entered the morning and at this very time the whole kingdom belongs to Allah, Lord of the Worlds. O Allah, I ask You for the goodness of this day: its victory, its help, its light, and its blessings and guidance. I seek Your protection from the evil that is in it and from the evil that follows it.",
@@ -150,7 +169,24 @@
     "supplicationfordeadduringjanazah2translation": "O Allah, forgive those of us who are alive and those who are dead, the young and the old, males and females, those present and those absent. O Allah, whomever You cause to live among us, make him live according to Islam; and whomever You cause to die among us, let him die with faith. O Allah, do not deprive us of his reward and do not put us to trial after him.",
     "visitingagraveyard1translation": "Peace be upon you, O believing and Muslim dwellers of this place. Certainly, Allah willing, we will join you. We ask Allah to grant us and you well-being.",
     "visitingagraveyard2translation": "Peace be upon you, O dwellers of the grave! May Allah forgive us and you; you are our predecessors and we are to follow you.",
-    "placingdeceasedinsideagravetranslation": "In the name of Allah and according to the sunnah of the Messenger of Allah."
+    "placingdeceasedinsideagravetranslation": "In the name of Allah and according to the sunnah of the Messenger of Allah.",
+
+    "attainmentforgoodtranslation": "O Allah, we beg You for all that which will necessitate Your mercy and the determination to do all that which will necessitate Your forgiveness; for protection from every sin and accomplishment of every good; for attainment of Paradise and for freedom from Hell-fire.",
+    "bestoutcomestranslation": "O Allah, grant us the best outcome in all of our affairs, and protect us from the humiliation of this world and the punishment of the hereafter.",
+    "forgivnessforallsinstranslation": "O Allah, forgive for me all of my sins: the minor and major, the first and the last, the public and the private.",
+    "askingforgoodandprotectionfromeviltranslation": "O Allah, I beg You for all good: the immediate and the delayed, what I know of and what I do not know. I seek Your protection from all evil: the immediate and the delayed, what I know of and what I do not know. O Allah, I beg You for the good which Your slave and Prophet ﷺ asked from You, and I seek Your protection from the evil which Your slave and Prophet ﷺ sought protection for from You. O Allah, I beg You for Paradise, and whatever words or actions lead to it. I seek Your protection from Hell-fire, and whatever words or actions lead to it. I ask You to decree good for me in everything You foreordain for me.",
+    "forwhatisbesttranslation": "O Allah, with Your knowledge of the unseen and Your absolute power over the creation, let me live in this world as long as You know my living is good for me; and give me death when You know death is better for me. O Allah, I ask You for Your fear in private and in public, and for the word of truth in times of joy and anger. I ask You for moderation in poverty and in wealth. I ask You for endless blessings and perpetual delights. I ask You to make me pleased with destiny; for a cool and comfortable life after death; for the pleasure of seeing Your Face; and for the longing to meet You, without any painful ordeals and tribulations that misguide. O Allah, adorn us with the beauty of faith, and make us those who guide others and are guided themselves.",
+    "protectionfrombadendingstranslation": "O Allah, I seek Your protection from senility, from death by falling from a height or being crushed to death; from dying of sorrow, being burnt or drowning to death. I seek Your protection from being struck by shayṭān at the time of death and that I am killed. I seek Your protection from dying whilst I am fleeing from the battlefield. I seek Your protection from dying from a venomous sting.",
+    "freqduafromprophettranslation": "Our Lord, grant us good in this world and good in the Hereafter, and protect us from the torment of the Fire.",
+    "innerpeaceandstrengthtranslation": "My Lord, put my heart at peace for me, and make my task easy for me",
+    "wisdomandgoodendingtranslation": "My Lord, grant me wisdom and join me with the righteous. And grant that I may be spoken of with honour amongst the later generations. And make me amongst those who will inherit the Garden of Bliss… And do not disgrace me on the Day they will be resurrected - the Day when neither wealth nor children will be of any use - except for the one who comes to Allah with a sound heart.",
+    "forgivenessandeasetranslation": "Our Lord, do not impose blame upon us if we have forgotten or erred. Our Lord, and do not lay upon us a burden as You laid upon those before us. Our Lord, and do not burden us with that which we have no ability to bear. Pardon us, forgive us and have mercy upon us. You are our Protector, so help us against the disbelieving people.",
+    "firmnessandvictorytranslation": "Our Lord, pour upon us patience, make our steps firm and grant us victory over the disbelieving people",
+    "timesofdistresstranslation": "(My Lord), indeed adversity has touched me, and you are the Most Merciful of the merciful.",
+
+    "changingsidesatnighttranslation": "There is no god worthy of worship but Allah: The One, The All-Dominant; Lord of the heavens, the earth and whatever is between them; The Mighty, The Most Forgiving.",
+    "afterwakingup1translation": "All praise is for Allah Who granted me well-being in my body, and returned my soul to me and allowed me to remember Him.",
+    "afterwakingup2translation": "All praise is for Allah who gave us life after having taken it from us, and unto Him is the resurrection."
   },
   "s1": {
     "surah_number": "1",
