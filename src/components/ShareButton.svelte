@@ -1,10 +1,12 @@
-<script>
-  import { onMount } from "svelte";  
+<script lang="ts">
+  import { onMount } from 'svelte';
 
-  let shareSupported = false;
+  export let url: string;
+  export let ShareText: string;
+  let shareSupported = true;
 
-  // Runs on component mount
   onMount(() => {
+    // Check if the Web Share API is available
     shareSupported = !!navigator.share;
   });
 
@@ -12,31 +14,70 @@
     try {
       await navigator.share({
         title: 'Taraweeh+',
-        text: 'Shared a Dua',
-        url: window.location.href, 
+        text: ShareText,
+        url: url
       });
-      console.log('Shared successfully');
-    } catch (err) {
-      console.error('Error sharing:', err);
+      // using 'any' here is okay and intentional
+      // because there isnt a type that i can find
+      // (for now) that will go with err
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: any) { 
+      // User cancelled or share failed
+      if (err.name !== 'AbortError') {
+        console.error('Error sharing:', err);
+      }
     }
   }
 </script>
 
 {#if shareSupported}
-  <button on:click={shareLink} class="share-button">
-    📤 Share
+  <button
+    on:click={shareLink}
+    class="share-button"
+    aria-label="Share"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="icon"
+    >
+      <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+      <polyline points="16 6 12 2 8 6" />
+      <line x1="12" y1="2" x2="12" y2="15" />
+    </svg>
   </button>
-{:else}
-  <p>Your browser does not support sharing.</p>
 {/if}
 
 <style>
   .share-button {
-    padding: 10px 20px;
-    border-radius: 8px;
-    background: #007aff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px; /* Squircle-ish radius */
+    background: #252525;
     color: white;
     border: none;
-    font-size: 16px;
+    cursor: pointer;
+    transition:
+      background 0.2s,
+      transform 0.1s;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .share-button:active {
+    background: #121212;
+    transform: scale(0.95); /* Feedback on tap */
+  }
+
+  .icon {
+    width: 22px;
+    height: 22px;
   }
 </style>
