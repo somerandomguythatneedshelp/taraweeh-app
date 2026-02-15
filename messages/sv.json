@@ -33,6 +33,10 @@
     "evening": "Kvällsminnesstund",
     "eating": "Minnesstund före måltiden",
     "postprayer": "Minnesstund efter bönen",
+    "imanprotection": "Skydd för Iman",
+    "beforesleeptitle": "Innan Sömn",
+    "nightmares": "Mardrömmar",
+    "death": "Död",
 
     "morningdua": "Morgonens åkallan",
     "goodday": "Bön om en god dag",
@@ -46,6 +50,7 @@
 
     "afterbreakingfast": "Efter att ha brutit fastan #1",
     "afterbreakingfast1": "Efter att ha brutit fastan #2",
+    "forgetting_at_the_beginning": "Om du glömmer i början",
     "foronewhogivesfood": "Bön för den som ger en mat eller dryck",
     "beforeeating": "Före maten #1",
     "beforeeating1": "Före maten #2",
@@ -61,6 +66,31 @@
     "afterfajr": "Efter Fajr",
     "afterwitr": "Efter Witr",
 
+    "heartfirmness": "För hjärtats styrka",
+    "doubtinfaith1": "När man har tvivel i tron #1",
+    "doubtinfaith2": "När man har tvivel i tron #2",
+    "fearofshirkandriya": "När man fruktar Shirk och Riya",
+    "protectionfromdajjal": "Skydd från Dajjal, prövningar och svårigheter",
+
+    "beforesleep": "Innan sömn",
+    "forgivenessbeforesleep": "Be om förlåtelse innan sömn",
+    "dieuponfitrah": "Dö på Fitrah",
+
+    "afternightmare": "Efter en mardröm",
+
+    "yearnfordeath": "När svårigheter får dig att längta efter döden",
+    "deadtosayshadadah": "Uppmuntra den döende att säga Shahadah",
+    "neardeath1": "När man nästan upplever döden #1",
+    "neardeath2": "När man nästan upplever döden #2",
+    "afterdeath1": "Efter en persons död #1",
+    "afterdeath2": "Efter en persons död #2",
+    "afterdeath3": "Efter en persons död #3",
+    "supplicationfordeadduringjanazah1": "Bön för den avlidne under Janazah #1",
+    "supplicationfordeadduringjanazah2": "Bön för den avlidne under Janazah #2",
+    "visitingagraveyard1": "När man besöker en kyrkogård #1",
+    "visitingagraveyard2": "När man besöker en kyrkogård #2",
+    "placingdeceasedinsideagrave": "När man placerar den avlidne i graven",
+
     "morningduatranslation": "Vi har nått morgonen och herraväldet tillhör Allah, och jag vittnar att det inte finns någon värdig att dyrkas utom Allah.",
     "gooddaytranslation": "Vi har nått morgonen och herraväldet tillhör Allah. All lovprisning tillhör Allah. Det finns ingen värdig att dyrkas utom Allah, den Ende utan partner. Honom tillhör herraväldet och Honom tillhör lovprisningen, och Han har makt över allting. Min Herre, jag ber Dig om det goda i denna dag och det goda som följer den, och jag söker skydd hos Dig från det onda i denna dag och det onda som följer den. Min Herre, jag söker skydd hos Dig från lättja och ett dåligt åldrande. Min Herre, jag söker skydd hos Dig från Helvetets straff och gravens straff.",
     "blesseddaytranslation": "Vi har nått morgonen och herraväldet tillhör Allah, världarnas Herre. O Allah, jag ber Dig om det goda i denna dag: dess seger, dess hjälp, dess ljus, dess välsignelse och dess vägledning. Jag söker skydd hos Dig från det onda i den och det onda som följer den.",
@@ -73,6 +103,7 @@
 
     "afterbreakingfasttranslation": "O Allah, för Dig har jag fastat och med Din försörjning har jag brutit min fasta.",
     "afterbreakingfast1translation": "Törsten har försvunnit, ådrorna har fuktats och belöningen har fastställts, om Allah vill.",
+    "forgetting_at_the_beginning_translation": "I början och i slutet, i Allahs namn.",
     "foronewhogivesfoodtranslation": "O Allah, ge mat till den som har gett mig mat och ge dryck till den som har gett mig att dricka.",
     "beforeeatingtranslation": "I Allahs namn.",
     "beforeeating1translation": "O Allah, välsigna det för oss och ge oss något bättre än det.",
@@ -86,7 +117,32 @@
     "afterfajrandmaghribtranslation": "Det finns ingen värdig att dyrkas utom Allah, den Ende utan partner. Honom tillhör herraväldet och Honom tillhör lovprisningen. Han ger liv och Han ger död, och Han har makt över allting.",
     "afterfajrandmaghrib1translation": "O Allah, rädda mig från Elden.",
     "afterfajrtranslation": "O Allah, jag ber Dig om nyttig kunskap, god och ren försörjning och handlingar som accepteras.",
-    "afterwitrtranslation": "Fullkomlig är Konungen, den Allra Heligaste."
+    "afterwitrtranslation": "Fullkomlig är Konungen, den Allra Heligaste.",
+
+    "heartfirmnesstranslation": "O Hjärtans Förändrare, gör mitt hjärta fast vid Din religion.",
+    "doubtinfaith1translation": "Jag tror på Allah och Hans Sändebud.",
+    "doubtinfaith2translation": "Han är den Förste och den Siste, den Högste och den Närmaste. Och Han är Allvetande om allt.",
+    "fearofshirkandriyatranslation": "O Allah, jag söker Ditt skydd från att medvetet begå shirk och söker Din förlåtelse för att omedvetet begå det.",
+    "protectionfromdajjaltranslation": "O Allah, jag söker Ditt skydd från helvetets straff, gravens straff, livets och dödens prövningar, och från ondskan i Dajjals prövningar, den falske Messias.",
+
+    "beforesleeptranslation": "O Allah, endast i Ditt Namn dör jag och lever jag.",
+    "forgivenessbeforesleeptranslation": "Det finns ingen gud utom Allah. Han är ensam och har ingen partner. All makt och all lov tillhör Honom. Han är allsmäktig över allt. Ingen makt finns i att avvärja ont eller styrka att uppnå gott utom genom Allah. Allah är fri från imperfektion, och all lov tillhör Allah. Det finns ingen gud utom Allah och Allah är den Störste.",
+    "dieuponfitrahtranslation": "O Allah, jag överlämnar min själ till Dig, anförtro mina angelägenheter till Dig, vänder mitt ansikte mot Dig och förlitar mig helt på Dig, i hopp och fruktan för Dig. Det finns ingen tillflykt eller säkerhet från Dig utom hos Dig. Jag tror på Din Bok som Du har uppenbarat och på Din Profet som Du har sänt.",
+
+    "afternightmaretranslation": "Jag söker skydd i Allahs fullkomliga ord från Hans vrede och straff, från Hans tjänares ondska och från djävularnas onda viskningar och deras uppenbarelser för mig.",
+
+    "yearnfordeathtranslation": "O Allah, låt mig leva så länge livet är bättre för mig; och ge mig döden när döden är bättre för mig.",
+    "deadtosayshadadahtranslation": "Det finns ingen gud utom Allah.",
+    "neardeath1translation": "O Allah, förlåt mig och ha barmhärtighet med mig och förena mig med den Högste följeslagaren.",
+    "neardeath2translation": "Det finns ingen värd av dyrkan utom Allah, och Allah är den Störste, ingen annan är värd att dyrkas utom Allah, ensam, utan partner, till Honom hör allt som finns, och till Honom är all lov. Ingen makt finns att avvärja ont eller styrka att uppnå gott utom genom Allah.",
+    "afterdeath1translation": "O Allah, förlåt honom och höj hans ställning bland de vägledda. Ta hand om hans efterkommande i hans ställe. Förlåt oss och honom, världarnas Herre, och vidga hans grav och lys upp den för honom.",
+    "afterdeath2translation": "O Allah, förlåt mig och honom och ge mig gott efter honom.",
+    "afterdeath3translation": "Vi tillhör Allah och till Honom återvänder vi. O Allah, belöna mig för min prövning och ge mig något bättre i utbyte.",
+    "supplicationfordeadduringjanazah1translation": "O Allah, förlåt honom och var barmhärtig mot honom. Skydda honom och förlåt honom. Ära hans bostad och vidga hans ingång. Tvätta honom med vatten, snö och is, och rena honom från synd som ett vitt plagg renas från smuts. Ge honom i utbyte ett bättre hem än hans, en bättre familj än hans, och en bättre hustru än hans. Låt honom gå in i Paradiset och skydda honom från gravens straff och Helvetets straff.",
+    "supplicationfordeadduringjanazah2translation": "O Allah, förlåt oss som lever och de som har dött, unga och gamla, män och kvinnor, närvarande och frånvarande. O Allah, vem Du låter leva bland oss, låt honom leva enligt Islam; och vem Du låter dö bland oss, låt honom dö med tro. O Allah, beröva oss inte hans belöning och pröva oss inte efter honom.",
+    "visitingagraveyard1translation": "Frid vare med er, ni troende och muslimska invånare av denna plats. Allahs vilja är att vi kommer att förena oss med er. Vi ber Allah att ge oss och er välbefinnande.",
+    "visitingagraveyard2translation": "Frid vare med er, ni som bor i graven! Må Allah förlåta oss och er; ni är våra föregångare och vi ska följa er.",
+    "placingdeceasedinsideagravetranslation": "I Allahs namn och enligt Sändebudets sunna."
   },
   "quran": {
     "taraweeh": "Taraweeh",

@@ -33,6 +33,10 @@
     "evening": "أذكار المساء",
     "eating": "أذكار الطعام",
     "postprayer": "أذكار بعد الصلاة",
+    "imanprotection": "حماية الإيمان",
+    "beforesleeptitle": "قبل النوم",
+    "nightmares": "الكوابيس",
+    "death": "الموت",
 
     "morningdua": "دعاء الصباح",
     "goodday": "الدعاء لخير اليوم",
@@ -46,6 +50,7 @@
 
     "afterbreakingfast": "بعد الإفطار #1",
     "afterbreakingfast1": "بعد الإفطار #2",
+    "forgetting_at_the_beginning": "إذا نسيت في البداية",
     "foronewhogivesfood": "دعاء لمن أطعمك أو سقاك",
     "beforeeating": "قبل الطعام #1",
     "beforeeating1": "قبل الطعام #2",
@@ -61,6 +66,31 @@
     "afterfajr": "بعد الفجر",
     "afterwitr": "بعد الوتر",
 
+    "heartfirmness": "لقوة القلب",
+    "doubtinfaith1": "عندما يكون هناك شك في الإيمان #1",
+    "doubtinfaith2": "عندما يكون هناك شك في الإيمان #2",
+    "fearofshirkandriya": "عندما يخاف من الشرك والرياء",
+    "protectionfromdajjal": "الحماية من الدجال والفتن والابتلاءات",
+
+    "beforesleep": "قبل النوم",
+    "forgivenessbeforesleep": "طلب المغفرة قبل النوم",
+    "dieuponfitrah": "الموت على الفطرة",
+
+    "afternightmare": "بعد رؤية كابوس",
+
+    "yearnfordeath": "عندما تجعلك الصعوبات تتوق إلى الموت",
+    "deadtosayshadadah": "تشجيع المحتضر على قول الشهادة",
+    "neardeath1": "عندما يقترب المرء من الموت #1",
+    "neardeath2": "عندما يقترب المرء من الموت #2",
+    "afterdeath1": "بعد وفاة شخص #1",
+    "afterdeath2": "بعد وفاة شخص #2",
+    "afterdeath3": "بعد وفاة شخص #3",
+    "supplicationfordeadduringjanazah1": "دعاء للميت أثناء الجنازة #1",
+    "supplicationfordeadduringjanazah2": "دعاء للميت أثناء الجنازة #2",
+    "visitingagraveyard1": "عند زيارة المقبرة #1",
+    "visitingagraveyard2": "عند زيارة المقبرة #2",
+    "placingdeceasedinsideagrave": "عند وضع الميت داخل القبر",
+
     "morningduatranslation": "أصبحنا وأصبح الملك لله، وأشهد أن لا إله إلا الله.",
     "gooddaytranslation": "أصبحنا وأصبح الملك لله، والحمد لله، لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير. ربِّ أسألك خير ما في هذا اليوم وخير ما بعده، وأعوذ بك من شر ما في هذا اليوم وشر ما بعده. ربِّ أعوذ بك من الكسل وسوء الكِبَر، ربِّ أعوذ بك من عذاب النار وعذاب القبر.",
     "blesseddaytranslation": "أصبحنا وأصبح الملك لله رب العالمين. اللهم إني أسألك خير هذا اليوم: فتحه ونصره ونوره وبركته وهداه، وأعوذ بك من شر ما فيه وشر ما بعده.",
@@ -73,6 +103,7 @@
 
     "afterbreakingfasttranslation": "اللهم لك صمت وعلى رزقك أفطرت.",
     "afterbreakingfast1translation": "ذهب الظمأ وابتلت العروق وثبت الأجر إن شاء الله.",
+    "forgetting_at_the_beginning_translation": "بِسْمِ اللهِ في البداية وفي نهايتها.",
     "foronewhogivesfoodtranslation": "اللهم أطعم من أطعمني واسق من سقاني.",
     "beforeeatingtranslation": "بسم الله.",
     "beforeeating1translation": "اللهم بارك لنا فيه وأطعمنا خيرًا منه.",
@@ -86,7 +117,32 @@
     "afterfajrandmaghribtranslation": "لا إله إلا الله وحده لا شريك له، له الملك وله الحمد، يحيي ويميت وهو على كل شيء قدير.",
     "afterfajrandmaghrib1translation": "اللهم أجرني من النار.",
     "afterfajrtranslation": "اللهم إني أسألك علمًا نافعًا، ورزقًا طيبًا، وعملًا متقبلًا.",
-    "afterwitrtranslation": "سبحان الملك القدوس."
+    "afterwitrtranslation": "سبحان الملك القدوس.",
+
+    "heartfirmnesstranslation": "يا مقلب القلوب ثبت قلبي على دينك.",
+    "doubtinfaith1translation": "أؤمن بالله ورسله.",
+    "doubtinfaith2translation": "هو الأول والآخر، العلي والقريب، وهو عليم بكل شيء.",
+    "fearofshirkandriyatranslation": "اللهم أعوذ بك من أن أشرك عن عمد وأستغفرك لما أشرك عن غير عمد.",
+    "protectionfromdajjaltranslation": "اللهم أعوذ بك من عذاب النار، وعذاب القبر، وفتن الحياة والموت، وشر فتنة الدجال.",
+
+    "beforesleeptranslation": "اللهم باسمك أموت وأحيا.",
+    "forgivenessbeforesleeptranslation": "لا إله إلا الله، وحده لا شريك له، له الملك وله الحمد، وهو على كل شيء قدير، لا حول ولا قوة إلا بالله، سبحانه وتعالى، والحمد لله، لا إله إلا الله والله أكبر.",
+    "dieuponfitrahtranslation": "اللهم أسلمت نفسي إليك، وأفوض أمري إليك، وأوجه وجهي إليك، وأتوكل عليك، رجاء وخوفاً، لا ملجأ ولا منجى منك إلا إليك، وأؤمن بكتابك الذي أنزلت، وبنبيك الذي أرسلت.",
+
+    "afternightmaretranslation": "أعوذ بكلمات الله التامة من غضبه وعقابه، ومن شر عباده، ومن شر الشياطين وهم يوسوسون ويظهرون لي.",
+
+    "yearnfordeathtranslation": "اللهم اجعل حياتي ما كانت خيراً لي، ومماتي متى كان خيراً لي.",
+    "deadtosayshadadahtranslation": "لا إله إلا الله.",
+    "neardeath1translation": "اللهم اغفر لي وارحمني واجمعني مع الصحبة العليا.",
+    "neardeath2translation": "لا إله إلا الله والله أكبر، لا شريك له، له ما في السماوات والأرض، وله الحمد، ولا حول ولا قوة إلا بالله.",
+    "afterdeath1translation": "اللهم اغفر له وارفع درجاته بين الهادين، واعتن بأهله من بعده، واغفر لنا وله يا رب العالمين، وافتح له قبره ونور له فيه.",
+    "afterdeath2translation": "اللهم اغفر لي وله، واجعل لي الخير بعده.",
+    "afterdeath3translation": "إنا لله وإنا إليه راجعون، اللهم اجزني عن بلائي خيراً وأبدله لي خيراً.",
+    "supplicationfordeadduringjanazah1translation": "اللهم اغفر له وارحمه، وآمنه واعف عنه، وكرم مسكنه ووسع مدخله، واغسله بالماء والثلج والبرد، وطهره من الخطايا كما يُطهر الثوب الأبيض من الدنس، وأبدله داراً خيراً من داره، وأهلاً خيراً من أهله، وزوجة خيراً من زوجه، وأدخله الجنة وأعذه من عذاب القبر وعذاب النار.",
+    "supplicationfordeadduringjanazah2translation": "اللهم اغفر لنا وللأموات، صغاراً وكباراً، ذكوراً وإناثاً، حاضرون وغائبون، ومن أحييت بينهم فاجعله يعيش بالإسلام، ومن مت بينهم فاجعله يموت على الإيمان، ولا تحرمنا أجره ولا تفتنا بعده.",
+    "visitingagraveyard1translation": "السلام عليكم أهل هذا المكان من المؤمنين والمسلمين، إن شاء الله سنلتحق بكم، نسأل الله لنا ولكم العافية.",
+    "visitingagraveyard2translation": "السلام عليكم أهل القبور، اغفر الله لنا ولكم، أنتم أسلافنا ونحن سنتبعكم.",
+    "placingdeceasedinsideagravetranslation": "بسم الله وعلى سنة رسول الله."
   },
   "quran": {
     "taraweeh": "التراويح",
