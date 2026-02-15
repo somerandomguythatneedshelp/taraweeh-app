@@ -41,6 +41,10 @@
     "evening": "Evening Dhikr",
     "eating": "Eating Dhikr",
     "postprayer": "After-Prayer Dhikr",
+    "imanprotection": "Protection for Iman",
+    "beforesleeptitle": "Before Sleep",
+    "nightmares": "Nightmares",
+    "death": "Death",
 
     "morningdua": "Start of the Morning",
     "goodday": "Asking Allah for a Good Day",
@@ -54,6 +58,7 @@
 
     "afterbreakingfast": "After Breaking Fast #1",
     "afterbreakingfast1": "After Breaking Fast #2",
+    "forgetting_at_the_beginning": "If you forget at the beginning",
     "foronewhogivesfood": "Supplication for Somebody Who Gives One Food or Drink",
     "beforeeating": "Before Eating #1",
     "beforeeating1": "Before Eating #2",
@@ -69,6 +74,31 @@
     "afterfajr": "After Fajr",
     "afterwitr": "After Witr",
 
+    "heartfirmness": "For firmness of the Heart",
+    "doubtinfaith1": "When one has doubt in Faith #1",
+    "doubtinfaith2": "When one has doubt in Faith #2",
+    "fearofshirkandriya": "When one fears Shirk & Riya",
+    "protectionfromdajjal": "Protection from Dajjal, trials & tribulations",
+
+    "beforesleep": "Before Sleep",
+    "forgivenessbeforesleep": "Asking for forgiveness before sleep",
+    "dieuponfitrah": "Die upon Fitrah",
+
+    "afternightmare": "After having a nightmare",
+
+    "yearnfordeath": "When Difficulties Make You Yearn for Death",
+    "deadtosayshadadah": "Encouraging the Dying to Say Shahadah",
+    "neardeath1": "When nearly experiencing Death #1",
+    "neardeath2": "When nearly experiencing Death #2",
+    "afterdeath1": "After a person's death #1",
+    "afterdeath2": "After a person's death #2",
+    "afterdeath3": "After a person's death #3",
+    "supplicationfordeadduringjanazah1": "Supplication for the deceased during Janazah #1",
+    "supplicationfordeadduringjanazah2": "Supplication for the deceased during Janazah #2",
+    "visitingagraveyard1": "When visting a graveyard #1",
+    "visitingagraveyard2": "When visting a graveyard #2",
+    "placingdeceasedinsideagrave": "When placing the deceased inside the grave",
+
     "morningduatranslation": "I have entered the morning praising You, and I bear witness that there is no god worthy of worship but Allah.",
     "gooddaytranslation": "We have entered the morning and at this very time the whole kingdom belongs to Allah. All praise is due to Allah. There is no god worthy of worship except Allah, the One; He has no partner with Him. The entire kingdom belongs solely to Him, to Him is all praise due, and He is All-Powerful over everything. My Lord, I ask You for the good that is in this day and the good that follows it, and I seek Your protection from the evil that is in this day and from the evil that follows it. My Lord, I seek Your protection from laziness and the misery of old age. My Lord, I seek Your protection from the torment of the Hell-fire and the punishment of the grave.",
     "blesseddaytranslation": "We have entered the morning and at this very time the whole kingdom belongs to Allah, Lord of the Worlds. O Allah, I ask You for the goodness of this day: its victory, its help, its light, and its blessings and guidance. I seek Your protection from the evil that is in it and from the evil that follows it.",
@@ -81,6 +111,7 @@
 
     "afterbreakingfasttranslation": "O Allah, for You I have fasted, and with Your provision I have broken my fast.",
     "afterbreakingfast1translation": "The thirst has gone, the veins have been moistened, and the reward has been secured, if Allah wills.",
+    "forgetting_at_the_beginning_translation": "In the Name of Allah at the beginning and at the end of it.",
     "foronewhogivesfoodtranslation": "O Allah, feed the one who has fed me and give to drink the one who has given me to drink.",
     "beforeeatingtranslation": "In the name of Allah.",
     "beforeeating1translation": "O Allah, bless us in it and feed us that which is better than it.",
@@ -94,7 +125,32 @@
     "afterfajrandmaghribtranslation": "There is no god but Allah. He is Alone and He has no partner whatsoever. To Him Alone belong all sovereignty and all praise. He gives life and He gives death. He is over all things All-Powerful.",
     "afterfajrandmaghrib1translation": "O Allah, protect me from the Hell-fire.",
     "afterfajrtranslation": "O Allah, I ask You for beneficial knowledge, wholesome sustenance, and deeds which are accepted.",
-    "afterwitrtranslation": "How perfect is the Sovereign, the Most Holy."
+    "afterwitrtranslation": "How perfect is the Sovereign, the Most Holy.",
+
+    "heartfirmnesstranslation": "O Changer of the hearts, make my heart firm upon Your religion.",
+    "doubtinfaith1translation": "I believe in Allah and His Messengers.",
+    "doubtinfaith2translation": "He is the First and the Last, the Most High and the Most Near. And He is All-Knowing about everything.",
+    "fearofshirkandriyatranslation": "O Allah, I seek Your protection from knowingly committing shirk and seek Your forgiveness for unknowingly (committing it).",
+    "protectionfromdajjaltranslation": "O Allah, I seek Your protection from the punishment of the Hell-fire, and from the punishment of the grave, and from the trials of life and death, and from the evil of the tribulation of Dajjāl, the false Messiah.",
+
+    "beforesleeptranslation": "O Allah, solely in Your Name I die and I live.",
+    "forgivenessbeforesleeptranslation": "There is no god but Allah. He is Alone and He has no partner whatsoever. To Him Alone belong all sovereignty and all praise. He is over all things All-Powerful. There is no power (in averting evil) or strength (in attaining good) except through Allah. Allah is free from imperfection, and all praise is for Allah. There is no god but Allah and Allah is the Greatest.",
+    "dieuponfitrahtranslation": "O Allah, I submit my soul unto You, and I entrust my affair unto You, and I turn my face towards You, and I totally rely on You, in hope and fear of You. Verily there is no refuge or safe haven from You except with You. I believe in Your Book which You have revealed and in Your Prophet whom You have sent.",
+
+    "afternightmaretranslation": "I seek protection in the perfect words of Allah from His anger and punishment, and from the evil of His servants, and from the evil suggestions of the devils and from them appearing to me.",
+
+    "yearnfordeathtranslation": "O Allah, let me live as long as life is better for me; and give me death when death is better for me.",
+    "deadtosayshadadahtranslation": "There is no god but Allah.",
+    "neardeath1translation": "O Allah, forgive me and have mercy on me and join me with the Highest Companion.",
+    "neardeath2translation": "There is none worthy of worship except Allah, and Allah is the Greatest, there is none worthy of worship except for Allah, alone, there is none worthy of worship except for Allah, alone, without any partner, there is none worthy of worship except for Allah, to Him belongs all that exists, and to Him is all praise, there is none worthy of worship except for Allah, there is no power in averting evil, or strength in attaining good except through Allah.",
+    "afterdeath1translation": "O Allah, forgive him and raise his station among those who are guided. Take care of his future generations in his place. Forgive us and him, Lord of the Worlds, and expand his grave for him and illuminate it for him.",
+    "afterdeath2translation": "O Allah, forgive me and him, and give me good after him.",
+    "afterdeath3translation": "We are from Allah and to Him do we return. O Allah, reward me for my affliction and give me something better in return for it.",
+    "supplicationfordeadduringjanazah1translation": "O Allah, forgive him and have mercy on him. Protect him and pardon him. Ennoble his dwelling and widen his entrance. Wash him with water, snow and ice, and purify him from sin as a white garment is purified of dirt. Give him in exchange a house better than his house, a family better than his family, and a wife better than his wife. Enter him into Paradise and protect him from the punishment in the grave and the punishment of the Hell-Fire.",
+    "supplicationfordeadduringjanazah2translation": "O Allah, forgive those of us who are alive and those who are dead, the young and the old, males and females, those present and those absent. O Allah, whomever You cause to live among us, make him live according to Islam; and whomever You cause to die among us, let him die with faith. O Allah, do not deprive us of his reward and do not put us to trial after him.",
+    "visitingagraveyard1translation": "Peace be upon you, O believing and Muslim dwellers of this place. Certainly, Allah willing, we will join you. We ask Allah to grant us and you well-being.",
+    "visitingagraveyard2translation": "Peace be upon you, O dwellers of the grave! May Allah forgive us and you; you are our predecessors and we are to follow you.",
+    "placingdeceasedinsideagravetranslation": "In the name of Allah and according to the sunnah of the Messenger of Allah."
   },
   "s1": {
     "surah_number": "1",

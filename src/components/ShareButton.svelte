@@ -21,7 +21,7 @@
       // because there isnt a type that i can find
       // (for now) that will go with err
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (err: any) { 
+    } catch (err: any) {
       // User cancelled or share failed
       if (err.name !== 'AbortError') {
         console.error('Error sharing:', err);

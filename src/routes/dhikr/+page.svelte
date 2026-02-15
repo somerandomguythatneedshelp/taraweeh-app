@@ -10,7 +10,11 @@
     { id: 'dhikr.morning' },
     { id: 'dhikr.evening' },
     { id: 'dhikr.eating' },
-    { id: 'dhikr.postprayer' }
+    { id: 'dhikr.postprayer' },
+    { id: 'dhikr.imanprotection' },
+    { id: 'dhikr.beforesleeptitle' },
+    { id: 'dhikr.nightmares' },
+    { id: 'dhikr.death' }
   ];
 
   var selectedDhikr: Record<

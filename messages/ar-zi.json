@@ -33,6 +33,10 @@
     "evening": "Azkar El Masa2",
     "eating": "Azkar El Ta3am",
     "postprayer": "Azkar Ba3d El Salah",
+    "imanprotection": "Himayet el iman",
+    "beforesleeptitle": "Qabl el nom",
+    "nightmares": "El kawabis",
+    "death": "El mawt",
 
     "morningdua": "Doaa El Sabah",
     "goodday": "Doaa li khair el yom",
@@ -46,6 +50,7 @@
 
     "afterbreakingfast": "Ba3d el iftar #1",
     "afterbreakingfast1": "Ba3d el iftar #2",
+    "forgetting_at_the_beginning": "Agar aap shuruat mein bhool jaen",
     "foronewhogivesfood": "Doaa liman a63amak aw saqak",
     "beforeeating": "Qabl el akl #1",
     "beforeeating1": "Qabl el akl #2",
@@ -61,6 +66,31 @@
     "afterfajr": "Ba3d el fajr",
     "afterwitr": "Ba3d el witr",
 
+    "heartfirmness": "Li quwwat el qalb",
+    "doubtinfaith1": "3ndama yakun hunak shakk fi el iman #1",
+    "doubtinfaith2": "3ndama yakun hunak shakk fi el iman #2",
+    "fearofshirkandriya": "3ndama yakhaf min el shirk w el riya",
+    "protectionfromdajjal": "El himayet min el Dajjal, el fitan w el ibtlayat",
+
+    "beforesleep": "Qabl el nom",
+    "forgivenessbeforesleep": "Talab el maghfirah qabl el nom",
+    "dieuponfitrah": "El mawt 3la el fitrah",
+
+    "afternightmare": "Ba3d ro2yet kabous",
+
+    "yearnfordeath": "3ndama taj3aluk el su3ubat tatawaqq ila el mawt",
+    "deadtosayshadadah": "Tashji3 el mohtadir 3la qawl el shahada",
+    "neardeath1": "3ndama yaqtarib el mar2 min el mawt #1",
+    "neardeath2": "3ndama yaqtarib el mar2 min el mawt #2",
+    "afterdeath1": "Ba3d wafat shakhs #1",
+    "afterdeath2": "Ba3d wafat shakhs #2",
+    "afterdeath3": "Ba3d wafat shakhs #3",
+    "supplicationfordeadduringjanazah1": "Du3a lil mayyit athna2 el janazah #1",
+    "supplicationfordeadduringjanazah2": "Du3a lil mayyit athna2 el janazah #2",
+    "visitingagraveyard1": "3ndama tazur el maqbara #1",
+    "visitingagraveyard2": "3ndama tazur el maqbara #2",
+    "placingdeceasedinsideagrave": "3ndama tadh3 el mayyit fi el qabr",
+
     "morningduatranslation": "Asbahna wa asbah el molk lel lah, wa ashhadu an la ilaha illa Allah.",
     "gooddaytranslation": "Asbahna wa asbah el molk lel lah, wal hamdu lel lah, la ilaha illa Allah wahdahu la sharika lah, lahul molk wa lahul hamd wa huwa 3ala koll shay2 qadeer. Rab as2aloka khair ma fi hatha el yawm wa khair ma ba3dah, wa a3وذ bika men shar ma fi hatha el yawm wa shar ma ba3dah. Rab a3وذ bika men el kasal wa soo2 el kibar, rab a3وذ bika men 3athab el nar wa 3athab el qabr.",
     "blesseddaytranslation": "Asbahna wa asbah el molk lel lah rabb el 3alameen. Allahumma inni as2aloka khair hatha el yawm: fathahu wa nasrahu wa nourahu wa barakatahu wa hodahu, wa a3وذ bika men shar ma feeh wa shar ma ba3dah.",
@@ -73,6 +103,7 @@
 
     "afterbreakingfasttranslation": "Allahumma laka sumt wa 3ala rezqika aftart.",
     "afterbreakingfast1translation": "Thahaba el zama2 wa abtallat el 3orouq wa thabata el ajr in sha2 Allah.",
+    "forgetting_at_the_beginning_translation": "Bismallah fel bedaya we fel nehaya.",
     "foronewhogivesfoodtranslation": "Allahumma a6em man a6amani wasqi man saqani.",
     "beforeeatingtranslation": "Bismillah.",
     "beforeeating1translation": "Allahumma barik lana feeh wa a6emna khairan menno.",
@@ -86,7 +117,32 @@
     "afterfajrandmaghribtranslation": "La ilaha illa Allah wahdahu la sharika lah, lahul molk wa lahul hamd, yohyi wa yomeet wa huwa 3ala koll shay2 qadeer.",
     "afterfajrandmaghrib1translation": "Allahumma ajerni men el nar.",
     "afterfajrtranslation": "Allahumma inni as2aloka 3ilman nafi3an, wa rezqan tayyiban, wa 3amalan motaqabbalan.",
-    "afterwitrtranslation": "Subhan al malik al quddous."
+    "afterwitrtranslation": "Subhan al malik al quddous.",
+
+    "heartfirmnesstranslation": "Ya Moqallib el quloob, thabbit qalbi 3la deenik.",
+    "doubtinfaith1translation": "A'men bi Allah wa Rusulihi.",
+    "doubtinfaith2translation": "Huwa el awwal wal akhir, el 3ali wal qarib, wa huwa 3alim bikol shay.",
+    "fearofshirkandriyatranslation": "Allahumma a3udhu bika an ushrik 3amdan wa astaghfiruka lima ashraktu 3an ghayr 3amdin.",
+    "protectionfromdajjaltranslation": "Allahumma a3udhu bika min 3adhab en-nar, wa 3adhab el-qabr, wa fitan el-hayat wal-mawt, wa shar fitnat ed-Dajjal.",
+
+    "beforesleeptranslation": "Allahumma bismik amutu wa ahya.",
+    "forgivenessbeforesleeptranslation": "La ilaha illa Allah, wahdahu la shareek lahu, lahu el-mulk wa lahu el-hamd, wa huwa 3ala kol shay qadeer, la hawla wa la quwwata illa billah, subhanahu wa el-hamdulillah, la ilaha illa Allah wa Allahu akbar.",
+    "dieuponfitrahtranslation": "Allahumma aslamtu nafsi ilayk, wa afawwidu amri ilayk, wa awajjihu wajhi ilayk, wa atawakkalu 3alayk, raja'an wa khawfan, la malja'a wa la manja mink illa ilayk, wa o'minu bikitabik allathi anzalta, wa binabiyyik allathi arsalt.",
+
+    "afternightmaretranslation": "A3udhu bikalimat Allah et-tamma min ghadabihi wa 3iqabihi, wa min shar 3ibadihi, wa min shar esh-shayatin wahum yuwaswisoona wa yazharoona li.",
+
+    "yearnfordeathtranslation": "Allahumma aj3al hayati ma kan khayran li, wa mawati mata kan khayran li.",
+    "deadtosayshadadahtranslation": "La ilaha illa Allah.",
+    "neardeath1translation": "Allahumma ighfir li warhamni wa ajma3ni ma3a es-suhba el-3ulya.",
+    "neardeath2translation": "La ilaha illa Allah wa Allahu akbar, la shareek lahu, lahu ma fi es-samawat wal-ard, wa lahu el-hamd, wa la hawla wa la quwwata illa billah.",
+    "afterdeath1translation": "Allahumma ighfir lahu warfa3 darajatahu bayn el-hadyeen, wa a3tani bi ahlihi min ba3dihi, wa aghfir lana wa lahu ya rab el-3alameen, wa aftah lahu qabrahu wa nawwirhu lahu.",
+    "afterdeath2translation": "Allahumma ighfir li wa lahu, wa aj3al li el-khayr ba3dahu.",
+    "afterdeath3translation": "Inna lillah wa inna ilayhi raji3oon, Allahumma ajzini 3an bala'i khayran wa abdelhu li khayran.",
+    "supplicationfordeadduringjanazah1translation": "Allahumma ighfir lahu warhamhu, wa aminhu wa a3f 3anhu, wa karrim maskanahu wa wassi3 madkhalahu, wa aghsilhu bil ma' wal thalj wal barad, wa tahhirhu min al-dhunub kama yutahhar al-thawb el-abyad min el-danas, wa abdilhu daran khayran min darahu, wa ahlan khayran min ahlihi, wa zawjan khayran min zawjihi, wa adkhilhu el-jannah wa a3ithhu min 3adhab el-qabr wa 3adhab en-nar.",
+    "supplicationfordeadduringjanazah2translation": "Allahumma ighfir lana wal-amwat, sigharan wa kibar, dhukuran wa untha, hadirun wa ghaibun, waman ahyaita baynana faj3alhu ya3ish bil-Islam, waman mata baynana faj3alhu yamut 3ala el-iman, wa la tahrimna ajrahu wa la taftinna ba3dahu.",
+    "visitingagraveyard1translation": "As-salamu 3alaykum ahl hatha el-makan min el-mu'mineen wal-muslimeen, in sha Allah sanaltaqi bikum, nas'al Allah lana wa lakum el-3afiyah.",
+    "visitingagraveyard2translation": "As-salamu 3alaykum ahl el-quboor, ighfir Allah lana wa lakum, antum aslafuna wa nahnu sanattabi3ukum.",
+    "placingdeceasedinsideagravetranslation": "Bismillah wa 3ala sunnat Rasool Allah."
   },
   "quran": {
     "taraweeh": "Etarawi7",
