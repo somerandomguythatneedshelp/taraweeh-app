@@ -75,6 +75,7 @@
   function handleDhikrClick(id: number) {
     selectedDhikr = Dhikr[id];
     DhikrSelected = id;
+    sharedDuaIndex = null;
   }
 
   type MessageMap = {
