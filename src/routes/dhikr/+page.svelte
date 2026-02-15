@@ -1,6 +1,10 @@
 <script lang="ts">
+  import { page } from '$app/stores';
   import * as m from '$lib/paraglide/messages';
   import Dhikr from '$lib/dhikr';
+  import ShareButton from '../../components/ShareButton.svelte';
+  import { onMount } from 'svelte';
+  import { goto } from '$app/navigation';
 
   const dhikr = [
     { id: 'dhikr.morning' },
@@ -14,12 +18,63 @@
     { arabic: string; translationlocale: string }
   > | null = null;
 
+  // difference between this and selectedDhikr
+  // is that DhikrSelected will hold the actual
+  // ID of which dhikr category is selected
+  // whereas selectedDhikr is the actual data
+  // that the UI displays. ;)
+  var DhikrSelected: number;
+
+  let sharedDuaIndex: number | null = null;
+  let invalidParams = false;
+
+  $: {
+    const params = $page.url.searchParams;
+
+    const catParam = params.get('category');
+    const idParam = params.get('id');
+
+    const cat = Number(catParam);
+    const dua = Number(idParam);
+
+    invalidParams = false;
+
+    if (!isNaN(cat) && Dhikr[cat]) {
+      selectedDhikr = Dhikr[cat];
+      DhikrSelected = cat;
+
+      const entries = Object.entries(Dhikr[cat]);
+
+      if (idParam !== null) {
+        if (!isNaN(dua) && entries[dua]) {
+          sharedDuaIndex = dua;
+        } else {
+          invalidParams = true; // invalid dua index
+        }
+      } else {
+        sharedDuaIndex = null; // show full category
+      }
+    } else if (catParam !== null) {
+      invalidParams = true; // invalid category
+    }
+  }
+
+  onMount(() => {
+    if (invalidParams) {
+      // cant even find the correct import
+      // for resolve bro
+      // eslint-disable-next-line svelte/no-navigation-without-resolve
+      goto($page.url.pathname, { replaceState: true });
+    }
+  });
+
   function handleDhikrClick(id: number) {
     selectedDhikr = Dhikr[id];
+    DhikrSelected = id;
   }
 
   type MessageMap = {
-    [key in typeof dhikr[number]['id']]: () => string;
+    [key in (typeof dhikr)[number]['id']]: () => string;
   };
 
   const messages = m as unknown as MessageMap;
@@ -38,23 +93,30 @@
     {#if selectedDhikr}
       <div class="details-container">
         {#each Object.entries(selectedDhikr) as [key, value], i (i)}
-          <div class="dhikr-detail-item">
-            <p class="detail-label">
-              {messages[key] ? messages[key]() : key}
-            </p>
+          {#if sharedDuaIndex === null || i === sharedDuaIndex}
+            <div class="dhikr-detail-item mb-2">
+              <div class="detail-label-container">
+                <span class="detail-label">
+                  {messages[key] ? messages[key]() : key}
+                </span>
 
-            <p class="arabic-text" dir="rtl">
-              {value.arabic}
-            </p>
+                <ShareButton
+                  url={`https://tune-mu.com/share?t=dua&category=${DhikrSelected}&id=${i}`}
+                  ShareText="Shared a Dua"
+                />
+              </div>
 
-            <p class="translation-text">
-              {messages[value.translationlocale] ? messages[value.translationlocale]() : value.translationlocale}
-            </p>
+              <p class="arabic-text" dir="rtl">
+                {value.arabic}
+              </p>
 
-            {#if i < Object.entries(selectedDhikr).length - 1}
-              <hr class="divider" />
-            {/if}
-          </div>
+              <p class="translation-text">
+                {messages[value.translationlocale]
+                  ? messages[value.translationlocale]()
+                  : value.translationlocale}
+              </p>
+            </div>
+          {/if}
         {/each}
       </div>
     {/if}
@@ -62,6 +124,21 @@
 </div>
 
 <style>
+  .detail-label-container {
+    display: flex;
+    align-items: center; /* vertically center text and button */
+    gap: 8px; /* spacing between text and button */
+    margin-bottom: 4px; /* optional spacing below */
+  }
+
+  .detail-label {
+    color: #0a84ff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
   .dhikr-container {
     padding: 20px;
   }
